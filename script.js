@@ -1,5 +1,3 @@
-// script.js - Efectos 3D y Animaciones Avanzadas
-
 document.addEventListener('DOMContentLoaded', function() {
     
     // ========== SISTEMA DE PARTÍCULAS FLOTANTES ==========
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const layers = document.querySelectorAll('.parallax-layer');
             
             layers.forEach((layer, index) => {
-                const speed = 0.5 + (index * 0.2);
+                const speed = 0.3 + (index * 0.1);
                 const yPos = -(scrolled * speed);
                 layer.style.transform = `translateY(${yPos}px)`;
             });
@@ -66,55 +64,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     createParallaxLayers();
     
-    // ========== MENÚ HAMBURGUESA 3D ==========
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+    // ========== HEADER DINÁMICO ==========
+    const header = document.querySelector('.header');
     
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        
-        // Animar las líneas del menú hamburguesa en 3D
-        const spans = menuToggle.querySelectorAll('span');
-        if (navLinks.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-            spans[0].style.background = 'linear-gradient(90deg, var(--accent-color), var(--primary-color))';
-            spans[1].style.opacity = '0';
-            spans[1].style.transform = 'scaleX(0)';
-            spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-            spans[2].style.background = 'linear-gradient(90deg, var(--accent-color), var(--primary-color))';
-            
-            // Rotar el botón completo
-            menuToggle.style.transform = 'rotate(180deg)';
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
         } else {
-            spans[0].style.transform = 'none';
-            spans[0].style.background = 'linear-gradient(90deg, var(--primary-color), var(--accent-color))';
-            spans[1].style.opacity = '1';
-            spans[1].style.transform = 'none';
-            spans[2].style.transform = 'none';
-            spans[2].style.background = 'linear-gradient(90deg, var(--primary-color), var(--accent-color))';
-            
-            // Restaurar rotación
-            menuToggle.style.transform = 'rotate(0deg)';
+            header.classList.remove('scrolled');
         }
     });
     
-    // Cerrar menú al hacer clic en un enlace
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            
-            const spans = menuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[0].style.background = 'linear-gradient(90deg, var(--primary-color), var(--accent-color))';
-            spans[1].style.opacity = '1';
-            spans[1].style.transform = 'none';
-            spans[2].style.transform = 'none';
-            spans[2].style.background = 'linear-gradient(90deg, var(--primary-color), var(--accent-color))';
-            menuToggle.style.transform = 'rotate(0deg)';
-        });
-    });
+    // ========== MENÚ HAMBURGUESA ==========
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
     
-    // ========== ANIMACIONES AL SCROLL CON PERSPECTIVA 3D ==========
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            
+            // Animar las líneas del menú hamburguesa
+            const spans = menuToggle.querySelectorAll('span');
+            if (nav.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+                spans[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.transform = 'none';
+            }
+        });
+    }
+    
+    // ========== ANIMACIONES AL SCROLL ==========
     const fadeElements = document.querySelectorAll('.fade-in');
     
     const checkFade = () => {
@@ -128,17 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     element.classList.add('visible');
-                    
-                    // Efecto adicional para elementos específicos
-                    if (element.classList.contains('service-card') || 
-                        element.classList.contains('value-item') ||
-                        element.classList.contains('legal-card')) {
-                        
-                        element.style.transform = 'perspective(1000px) rotateX(0deg) translateZ(0)';
-                        setTimeout(() => {
-                            element.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                        }, 100);
-                    }
                 }, delay * 1000);
             }
         });
@@ -165,283 +135,136 @@ document.addEventListener('DOMContentLoaded', function() {
             const rotateY = deltaX * 0.01;
             const rotateX = -deltaY * 0.01;
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            if (!card.classList.contains('hovering')) {
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(5px)`;
+            }
         });
         
         // Efecto en logo
         const logo = document.querySelector('.logo');
-        const rotateY = (mouseX - 0.5) * 10;
-        const rotateX = (0.5 - mouseY) * 10;
-        logo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        
-        // Efecto en botones
-        document.querySelectorAll('.btn').forEach(btn => {
+        if (logo) {
             const rotateY = (mouseX - 0.5) * 5;
             const rotateX = (0.5 - mouseY) * 5;
-            btn.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
+            logo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
     });
     
-    // ========== FORMULARIO CON EFECTOS ESPECTACULARES ==========
+    // ========== FORMULARIO DE CONTACTO ==========
     const contactForm = document.getElementById('contactForm');
-    const formInputs = contactForm.querySelectorAll('input, textarea');
     
-    // Efecto al enfocar inputs
-    formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.style.transform = 'translateZ(20px)';
-            this.style.boxShadow = '0 0 30px rgba(58, 90, 120, 0.5)';
-            
-            // Crear partículas alrededor del input
-            createInputParticles(this);
-        });
+    if (contactForm) {
+        const formInputs = contactForm.querySelectorAll('input, textarea');
         
-        input.addEventListener('blur', function() {
-            this.parentElement.style.transform = 'translateZ(0)';
-            this.style.boxShadow = '';
-        });
-    });
-    
-    function createInputParticles(input) {
-        const rect = input.getBoundingClientRect();
-        
-        for (let i = 0; i < 10; i++) {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: fixed;
-                width: 4px;
-                height: 4px;
-                background: radial-gradient(circle, var(--primary-color), transparent);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 10000;
-                animation: particleFloat 1s ease-out forwards;
-            `;
-            
-            const startX = rect.left + rect.width / 2;
-            const startY = rect.top + rect.height / 2;
-            
-            particle.style.left = `${startX}px`;
-            particle.style.top = `${startY}px`;
-            
-            document.body.appendChild(particle);
-            
-            // Animación de partícula
-            const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 50 + 20;
-            const endX = startX + Math.cos(angle) * distance;
-            const endY = startY + Math.sin(angle) * distance;
-            
-            particle.animate([
-                { transform: `translate(0, 0) scale(1)`, opacity: 1 },
-                { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0)`, opacity: 0 }
-            ], {
-                duration: 1000,
-                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-            }).onfinish = () => particle.remove();
-        }
-    }
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        if (!name || !email || !message) {
-            showNotification('Por favor, completa los campos obligatorios.', 'error');
-            return;
-        }
-        
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        // Efecto de carga espectacular
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span class="loading-text">Enviando...</span>';
-        submitBtn.disabled = true;
-        submitBtn.style.background = 'linear-gradient(135deg, var(--primary-dark), var(--accent-color))';
-        
-        // Crear efecto de partículas desde el botón
-        createButtonParticles(submitBtn);
-        
-        setTimeout(() => {
-            // Efecto de éxito
-            const successEffect = document.createElement('div');
-            successEffect.className = 'success-effect';
-            successEffect.innerHTML = `
-                <div class="success-content" style="
-                    text-align: center;
-                    padding: 40px;
-                    background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(18, 18, 18, 0.98));
-                    border-radius: var(--border-radius);
-                    border: 1px solid var(--primary-color);
-                    backdrop-filter: blur(20px);
-                    transform-style: preserve-3d;
-                    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
-                                0 0 50px rgba(58, 90, 120, 0.5);
-                ">
-                    <div style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3 style="color: var(--text-color); margin-bottom: 15px; font-size: 1.8rem;">
-                        ¡Mensaje Enviado!
-                    </h3>
-                    <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 25px;">
-                        Gracias <strong style="color: var(--primary-color);">${name}</strong>, 
-                        hemos recibido tu mensaje y nos pondremos en contacto contigo en las próximas 24 horas.
-                    </p>
-                    <button class="btn btn-secondary close-success" style="margin-top: 10px;">
-                        Cerrar
-                    </button>
-                </div>
-            `;
-            
-            document.body.appendChild(successEffect);
-            
-            // Restaurar botón
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
-            
-            // Limpiar formulario
-            contactForm.reset();
-            
-            // Cerrar mensaje de éxito
-            document.querySelector('.close-success')?.addEventListener('click', () => {
-                successEffect.remove();
+        // Efecto al enfocar inputs
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateZ(10px)';
+                this.style.boxShadow = '0 0 20px rgba(58, 90, 120, 0.3)';
             });
             
-            // Auto-cerrar después de 5 segundos
-            setTimeout(() => {
-                successEffect.remove();
-            }, 5000);
-        }, 2000);
-    });
-    
-    function createButtonParticles(button) {
-        const rect = button.getBoundingClientRect();
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateZ(0)';
+                this.style.boxShadow = '';
+            });
+        });
         
-        for (let i = 0; i < 20; i++) {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: fixed;
-                width: 8px;
-                height: 8px;
-                background: radial-gradient(circle, var(--primary-color), var(--accent-color));
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 10000;
-            `;
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            const startX = rect.left + rect.width / 2;
-            const startY = rect.top + rect.height / 2;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
             
-            particle.style.left = `${startX}px`;
-            particle.style.top = `${startY}px`;
+            if (!name || !email || !message) {
+                alert('Por favor, completa los campos obligatorios.');
+                return;
+            }
             
-            document.body.appendChild(particle);
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             
-            // Animación compleja de partícula
-            const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 100 + 50;
-            const endX = startX + Math.cos(angle) * distance;
-            const endY = startY + Math.sin(angle) * distance;
+            // Efecto de carga
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
             
-            particle.animate([
-                { 
-                    transform: `translate(0, 0) scale(1) rotate(0deg)`,
-                    opacity: 1
-                },
-                { 
-                    transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0) rotate(360deg)`,
-                    opacity: 0
-                }
-            ], {
-                duration: 1500,
-                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-            }).onfinish = () => particle.remove();
-        }
+            setTimeout(() => {
+                // Simulación de envío exitoso
+                alert('¡Mensaje enviado! Te contactaremos pronto.');
+                
+                // Restaurar botón
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Limpiar formulario
+                contactForm.reset();
+            }, 1500);
+        });
     }
     
-    // ========== EFECTO DE CONTADOR ESPECTACULAR ==========
+    // ========== EFECTO DE CONTADOR ==========
     const statNumbers = document.querySelectorAll('.stat-number');
     
-    // Actualiza esta parte en tu script.js para el contador de +20
-
-const animateCounter = (element, target) => {
-    let current = 0;
-    const increment = target / 50;
-    const duration = 1500;
-    const stepTime = duration / 50;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
+    if (statNumbers.length > 0) {
+        const animateCounter = (element, target) => {
+            let current = 0;
+            const increment = target / 50;
+            const stepTime = 1500 / 50;
             
-            // Efecto final
-            element.style.transform = 'scale(1.1)';
-            setTimeout(() => {
-                element.style.transform = 'scale(1)';
-            }, 300);
-        }
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                    
+                    // Efecto final
+                    element.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        element.style.transform = 'scale(1)';
+                    }, 300);
+                }
+                
+                // Formatear número manteniendo el "+"
+                let displayNumber;
+                if (element.textContent.includes('+')) {
+                    displayNumber = `+${Math.floor(current)}`;
+                } else {
+                    displayNumber = Math.floor(current);
+                }
+                
+                element.textContent = displayNumber;
+            }, stepTime);
+        };
         
-        // Formatear número manteniendo el "+"
-        let displayNumber;
-        if (element.textContent.includes('+')) {
-            displayNumber = `+${Math.floor(current)}`;
-        } else {
-            displayNumber = Math.floor(current);
-        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const text = statNumber.textContent.trim();
+                    let target;
+                    
+                    if (text.includes('+')) {
+                        target = parseInt(text.replace('+', '').split(' ')[0]);
+                        if (isNaN(target)) target = 20;
+                    } else {
+                        target = parseInt(text);
+                    }
+                    
+                    if (!isNaN(target) && target > 0) {
+                        statNumber.textContent = text.includes('+') ? '+0' : '0';
+                        animateCounter(statNumber, target);
+                    }
+                    
+                    observer.unobserve(statNumber);
+                }
+            });
+        }, { threshold: 0.5, rootMargin: '50px' });
         
-        element.textContent = displayNumber;
-    }, stepTime);
-};
-
-// En la parte del observer, actualiza para manejar "+20"
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumber = entry.target;
-            const text = statNumber.textContent.trim();
-            let target;
-            
-            if (text.includes('+')) {
-                // Manejar formato "+20"
-                target = parseInt(text.replace('+', '').split(' ')[0]);
-                if (isNaN(target)) target = 20; // Fallback
-            } else {
-                target = parseInt(text);
-            }
-            
-            if (!isNaN(target) && target > 0) {
-                statNumber.textContent = text.includes('+') ? '+0' : '0';
-                animateCounter(statNumber, target);
-            }
-            
-            observer.unobserve(statNumber);
-        }
-    });
-}, { threshold: 0.5, rootMargin: '50px' });
+        statNumbers.forEach(stat => {
+            observer.observe(stat);
+        });
+    }
     
-    statNumbers.forEach(stat => {
-        observer.observe(stat);
-    });
-    
-    // ========== EFECTO DE TEXTO TIPOWRITER ==========
-    const heroTitle = document.querySelector('.hero-title');
-    const originalText = heroTitle.innerHTML;
-    
-    // Simular efecto typewriter en carga
-    setTimeout(() => {
-        heroTitle.style.animation = 'textShimmer 3s infinite alternate';
-    }, 1000);
-    
-    // ========== EFECTO DE SCROLL SUAVE MEJORADO ==========
+    // ========== SCROLL SUAVE ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -456,126 +279,190 @@ const observer = new IntersectionObserver((entries) => {
                     const headerHeight = document.querySelector('.header').offsetHeight;
                     const targetPosition = targetElement.offsetTop - headerHeight;
                     
-                    // Animación de scroll con easing
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
                     
-                    // Efecto visual durante el scroll
-                    document.body.style.overflow = 'hidden';
-                    setTimeout(() => {
-                        document.body.style.overflow = '';
-                    }, 1000);
+                    // Cerrar menú móvil si está abierto
+                    if (nav && nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        const spans = menuToggle.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.transform = 'none';
+                    }
                 }
             }
         });
     });
     
-    // ========== EFECTO DE CABECERA DINÁMICO ==========
-    const header = document.querySelector('.header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-            header.style.backdropFilter = 'blur(30px)';
-        } else {
-            header.classList.remove('scrolled');
-            header.style.backdropFilter = 'blur(20px)';
-        }
-        
-        // Efecto parallax en hero
-        const hero = document.querySelector('.hero');
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translate3d(0, ${rate}px, 0)`;
-    });
-    
-    // ========== EFECTO DE HOVER EN TARJETAS MEJORADO ==========
+    // ========== EFECTO DE HOVER EN TARJETAS ==========
     const cards = document.querySelectorAll('.service-card, .value-item, .legal-card');
     
     cards.forEach(card => {
-        card.addEventListener('mouseenter', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
-            
-            // Efecto de partículas al hover
-            if (!card.classList.contains('hovering')) {
-                card.classList.add('hovering');
-                
-                for (let i = 0; i < 5; i++) {
-                    setTimeout(() => {
-                        createCardParticles(card);
-                    }, i * 100);
-                }
-            }
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('hovering');
         });
         
         card.addEventListener('mouseleave', () => {
             card.classList.remove('hovering');
+            card.style.transform = '';
         });
-    });
-    
-    function createCardParticles(card) {
-        const rect = card.getBoundingClientRect();
-        
-        for (let i = 0; i < 3; i++) {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: fixed;
-                width: 6px;
-                height: 6px;
-                background: radial-gradient(circle, var(--primary-color), transparent);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 1000;
-            `;
-            
-            const startX = rect.left + Math.random() * rect.width;
-            const startY = rect.top + Math.random() * rect.height;
-            
-            particle.style.left = `${startX}px`;
-            particle.style.top = `${startY}px`;
-            
-            document.body.appendChild(particle);
-            
-            const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * 30 + 10;
-            const endX = startX + Math.cos(angle) * distance;
-            const endY = startY + Math.sin(angle) * distance;
-            
-            particle.animate([
-                { transform: `translate(0, 0) scale(1)`, opacity: 1 },
-                { transform: `translate(${endX - startX}px, ${endY - startY}px) scale(0)`, opacity: 0 }
-            ], {
-                duration: 800,
-                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-            }).onfinish = () => particle.remove();
-        }
-    }
-    
-    // ========== EFECTO DE ILUMINACIÓN DINÁMICA ==========
-    document.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
-        
-        document.documentElement.style.setProperty('--mouse-x', x);
-        document.documentElement.style.setProperty('--mouse-y', y);
     });
     
     // ========== INICIALIZAR AÑO ACTUAL ==========
     const currentYear = new Date().getFullYear();
     document.getElementById('currentYear').textContent = currentYear;
     
-    // ========== EFECTO DE SONIDO (OPCIONAL) ==========
-    // Para un efecto completo, podrías añadir sonidos sutiles
-    // en interacciones clave (hover de botones, envío de formulario, etc.)
+    // ========== LÓGICA DE CARRITO DEMO PARA KIOSKO ==========
+    const cart = [];
+    const cartContainer = document.querySelector('.cart-items');
+    const totalAmountSpan = document.querySelector('.total-amount');
+    const checkoutBtn = document.querySelector('.cart-checkout');
     
-    console.log('%c🔥 NEXORA SOLUTIONS - Efectos 3D Activados 🔥', 
+    function updateCartDisplay() {
+        if (!cartContainer) return;
+        
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<div style="color: #888; text-align: center; padding: 10px;">Carrito vacío</div>';
+            totalAmountSpan.textContent = '0,00 €';
+            if (checkoutBtn) checkoutBtn.disabled = true;
+            return;
+        }
+        
+        let html = '';
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price;
+            html += `
+                <div class="cart-item">
+                    <span>${item.name}</span>
+                    <span class="cart-item-price">${item.price.toFixed(2)} €</span>
+                    <button class="cart-item-remove" data-index="${index}" aria-label="Eliminar item">×</button>
+                </div>
+            `;
+        });
+        cartContainer.innerHTML = html;
+        totalAmountSpan.textContent = total.toFixed(2) + ' €';
+        
+        // Habilitar/deshabilitar botón de pago
+        if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
+        
+        // Añadir listeners a los botones de eliminar
+        document.querySelectorAll('.cart-item-remove').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const index = parseInt(this.dataset.index);
+                cart.splice(index, 1);
+                updateCartDisplay();
+            });
+        });
+    }
+    
+    // Añadir items al carrito
+    document.querySelectorAll('.item-add').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const itemDiv = this.closest('.kiosk-item');
+            const itemName = itemDiv.dataset.item || itemDiv.querySelector('.item-name').textContent;
+            const priceText = itemDiv.dataset.price || itemDiv.querySelector('.item-price').textContent;
+            // Extraer número del precio (formato "8,50 €" o "8.50")
+            let price = parseFloat(priceText.replace(',', '.').replace('€', '').trim());
+            if (isNaN(price)) price = 0;
+            
+            cart.push({ name: itemName, price: price });
+            updateCartDisplay();
+            
+            // Efecto de feedback
+            this.style.transform = 'scale(0.9)';
+            setTimeout(() => this.style.transform = '', 200);
+        });
+    });
+    
+    // Botón checkout demo
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function() {
+            if (cart.length === 0) return;
+            alert('¡Gracias por tu pedido demo! En un entorno real se procesaría el pago.');
+            // Vaciar carrito
+            cart.length = 0;
+            updateCartDisplay();
+        });
+    }
+    
+    // Inicializar carrito vacío
+    updateCartDisplay();
+    
+    // ========== CALCULADORA DE PRESUPUESTO ==========
+    const projectTypeSelect = document.getElementById('project-type');
+    const urgencySelect = document.getElementById('urgency');
+    const checkboxesCalc = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+    const resultSpan = document.getElementById('result-value');
+    
+    if (projectTypeSelect && resultSpan) {
+        // Precios base por tipo de proyecto
+        const basePrices = {
+            landing: 1800,
+            corporate: 3500,
+            ecommerce: 6000,
+            custom: 9000,
+            kiosk: 5000
+        };
+        
+        // Precios de funcionalidades extra
+        const featurePrices = {
+            seo: 400,
+            blog: 500,
+            multilang: 800,
+            booking: 1200,
+            crm: 1500,
+            premium: 2000,
+            pagos: 600,
+            app: 3500
+        };
+        
+        function calculatePrice() {
+            // Precio base
+            const projectType = projectTypeSelect.value;
+            let base = basePrices[projectType] || 2500;
+            
+            // Sumar funcionalidades seleccionadas
+            let featuresTotal = 0;
+            checkboxesCalc.forEach(cb => {
+                if (cb.checked) {
+                    featuresTotal += featurePrices[cb.value] || 0;
+                }
+            });
+            
+            // Subtotal
+            let subtotal = base + featuresTotal;
+            
+            // Aplicar urgencia
+            const urgencyMultiplier = parseFloat(urgencySelect.value);
+            
+            // Calcular rango con variabilidad
+            const min = Math.round(subtotal * urgencyMultiplier * 0.9 / 100) * 100;
+            const max = Math.round(subtotal * urgencyMultiplier * 1.2 / 100) * 100;
+            
+            // Formatear como moneda
+            const formatter = new Intl.NumberFormat('es-ES', {
+                style: 'currency',
+                currency: 'EUR',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+            
+            resultSpan.textContent = `${formatter.format(min)} – ${formatter.format(max)}`;
+        }
+        
+        // Listeners
+        projectTypeSelect.addEventListener('change', calculatePrice);
+        urgencySelect.addEventListener('change', calculatePrice);
+        checkboxesCalc.forEach(cb => cb.addEventListener('change', calculatePrice));
+        
+        // Calcular inicial
+        calculatePrice();
+    }
+    
+    console.log('%c🔥 KORA SOLUTIONS - Efectos 3D Activados 🔥', 
         'font-size: 18px; font-weight: bold; color: #3a5a78; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);');
     console.log('%c✨ Experiencia visual mejorada con efectos 3D y animaciones avanzadas ✨', 
         'font-size: 14px; color: #ff6b6b;');

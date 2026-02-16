@@ -1,81 +1,50 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora Solutions | Agencia Digital Especializada</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="dark-theme">
-    <!-- Navegación -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <span class="logo-text">NEXORA<span class="logo-accent">SOLUTIONS</span></span>
-                </a>
-                
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio">INICIO</a></li>
-                    <li><a href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
-                    <li><a href="#servicios">SERVICIOS</a></li>
-                    <li><a href="#legal">LEGAL</a></li>
-                    <li><a href="#contacta" class="nav-cta">Contacta</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!DOCTYPE html><html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>KORA | Estrategia y tecnología digital</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link rel="stylesheet" href="style.css"> </head> <body>
+    
+<!-- HEADER REDISEÑADO: PREMIUM, SUTIL, DINÁMICO -->
+<header class="header">
+    <div class="header-container">
+        <a href="#" class="logo">KORA<span class="logo-dot"></span></a>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#inicio" class="nav-link" data-text="Inicio">Inicio</a></li>
+                <li class="nav-item"><a href="#sobre-nosotros" class="nav-link" data-text="Sobre Nosotros">Sobre Nosotros</a></li>
+                <li class="nav-item"><a href="#servicios" class="nav-link" data-text="Servicios">Servicios</a></li>
+                <li class="nav-item"><a href="#proyectos" class="nav-link" data-text="Proyectos">Proyectos</a></li>
+                <li class="nav-item"><a href="#kioscos" class="nav-link" data-text="Kioscos">Kioscos</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link" data-text="Contacto">Contacto</a></li>
+            </ul>
+        </nav>
 
-    <!-- Hero Section CORREGIDA -->
+        <div class="header-actions">
+            <a href="#contacto" class="btn btn-contact">Contacta</a>
+            <button class="menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HERO REDISEÑADO: CLAIM + ELEMENTO ABSTRACTO ANIMADO -->
     <section class="hero" id="inicio">
-        <div class="container">
+        <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title fade-in">
-                    <span class="hero-subheading">NEXORA SOLUTIONS</span>
-                    En <span class="highlight">NEXORA SOLUTIONS</span>, no seguimos las tendencias del mercado.
+                <h1 class="hero-title">
+                    En KORA, no seguimos las tendencias del mercado, las <span class="hero-title-accent">creamos</span>.
                 </h1>
-                <p class="hero-subtitle fade-in" data-delay="0.2s">
-                    Creamos productos únicos especializados para cada cliente. Buscamos crear el punto distintivo de cada negocio.
+                <p class="hero-description">
+                    Creamos productos digitales únicos que definen el punto distintivo de cada negocio.
                 </p>
-                <p class="hero-subtitle fade-in" data-delay="0.4s">
-                    Cada proyecto es una entrada a nuevo público online. Entendemos que detrás de cada negocio hay personas con sueños, metas y desafíos.
-                </p>
-                
-                <div class="stats fade-in" data-delay="0.6s">
-                    <div class="stat-item">
-                        <div class="stat-number">2026</div>
-                        <div class="stat-label">Año de fundación</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">+20</div>
-                        <div class="stat-label">Negocios digitalizados</div>
-                        <div class="stat-note">Desde entonces, hemos ayudado a decenas de negocios a digitalizarse con éxito</div>
-                    </div>
-                </div>
             </div>
-            
-            <div class="hero-image fade-in" data-delay="0.8s">
-                <div class="image-placeholder">
-                    <div class="placeholder-content">
-                        <i class="fas fa-lightbulb"></i>
-                        <p>Transformamos ideas en experiencias digitales</p>
-                    </div>
-                </div>
+            <div class="hero-visual">
+                <div class="visual-abstract"></div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Sobre Nosotros ACTUALIZADA -->
+    <!-- SECCIÓN SOBRE NOSOTROS -->
     <section class="about" id="sobre-nosotros">
         <div class="container">
             <div class="section-header">
@@ -86,12 +55,11 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3 class="about-subtitle">Nuestra filosofía</h3>
-                    <p>En Nexora Solutions creemos en la autenticidad por encima de todo. No aplicamos plantillas ni soluciones genéricas. Cada proyecto nace de un análisis profundo de las necesidades específicas de tu negocio.</p>
+                    <p>En KORA creemos en la autenticidad por encima de todo. No aplicamos plantillas ni soluciones genéricas. Cada proyecto nace de un análisis profundo de las necesidades específicas de tu negocio.</p>
                     
                     <h3 class="about-subtitle">Nuestro enfoque</h3>
                     <p>Trabajamos con metodologías ágiles pero con una visión artesanal. Cada línea de código, cada diseño, cada estrategia está pensada para construir no solo un producto digital, sino una extensión de tu marca.</p>
                     
-                    <!-- Valores actualizados según la imagen -->
                     <div class="values">
                         <div class="value-item">
                             <div class="value-icon">
@@ -131,7 +99,7 @@
         </div>
     </section>
 
-    <!-- Sección Servicios -->
+    <!-- SECCIÓN SERVICIOS CON 4 TARJETAS (INCLUYENDO KIOSKOS) -->
     <section class="services" id="servicios">
         <div class="container">
             <div class="section-header">
@@ -146,13 +114,12 @@
                     </div>
                     <h3 class="service-title">Diseño de Identidad</h3>
                     <p class="service-description">
-                        Creamos identidades visuales únicas que comunican los valores de tu marca y conectan emocionalmente con tu audiencia.
+                        Creamos identidades visuales únicas que comunican los valores de tu marca.
                     </p>
                     <ul class="service-list">
                         <li>Branding estratégico</li>
                         <li>Diseño de logotipo</li>
                         <li>Guías de estilo visual</li>
-                        <li>Diseño de papelería</li>
                     </ul>
                 </div>
                 
@@ -162,13 +129,12 @@
                     </div>
                     <h3 class="service-title">Desarrollo Web</h3>
                     <p class="service-description">
-                        Desarrollamos sitios web a medida, optimizados para rendimiento, SEO y conversión, con tecnologías modernas y escalables.
+                        Desarrollamos sitios web a medida con tecnologías modernas y escalables.
                     </p>
                     <ul class="service-list">
                         <li>Webs corporativas</li>
                         <li>E-commerce</li>
                         <li>Aplicaciones web</li>
-                        <li>Landing pages</li>
                     </ul>
                 </div>
                 
@@ -178,19 +144,207 @@
                     </div>
                     <h3 class="service-title">Automatizaciones IA</h3>
                     <p class="service-description">
-                        Automatizamos esas tareas repetitivas, que te ahorran muchas horas de trabajo.
+                        Automatizamos tareas repetitivas para ahorrar horas de trabajo.
                     </p>
                     <ul class="service-list">
                         <li>Bots entrenados con IA</li>
-                        <li>Automatización de formularios, emails...</li>
+                        <li>Automatización de emails</li>
                         <li>Clasificación de documentos</li>
+                    </ul>
+                </div>
+
+                <!-- SERVICIO DE KIOSKOS DE AUTOPEDIDO -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="service-title">Kioscos de Autopedido</h3>
+                    <p class="service-description">
+                        Digitaliza tu local con pantallas interactivas de autoservicio estilo McDonald's.
+                    </p>
+                    <ul class="service-list">
+                        <li>Catálogo digital interactivo</li>
+                        <li>Pago integrado (datáfono/QR)</li>
+                        <li>Envío directo a cocina</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Legal -->
+    <!-- SECCIÓN KIOSCOS (NUEVA SECCIÓN DETALLADA) -->
+    <section class="kioscos" id="kioscos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">DIGITALIZACIÓN <span class="highlight">EN LOCAL</span></h2>
+                <p class="section-subtitle">Lleva la experiencia de autopedido a tu establecimiento como McDonald's o Burger King.</p>
+            </div>
+            
+            <div class="kioscos-content">
+                <div class="kioscos-text fade-in">
+                    <h3>Kioscos de autopedido: el futuro de la restauración</h3>
+                    <p>Dile adiós a las colas y a los errores en comanda. Nuestras pantallas de autoservicio permiten a tus clientes explorar el menú, personalizar sus productos y pagar sin necesidad de un camarero.</p>
+                    
+                    <div class="kioscos-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Menos colas, más rotación</h4>
+                                <p>Reduce tiempos de espera hasta un 40% y atiende más clientes en horas punta.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>Aumenta el ticket medio</h4>
+                                <p>Las sugerencias visuales y los combos incrementan la venta cruzada de forma natural.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Cero errores</h4>
+                                <p>El cliente introduce su pedido directamente, eliminando malentendidos en la toma de comanda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="ideal-for"><strong>Ideal para:</strong> Restauración rápida, cafeterías, food trucks, take away, cines y cualquier negocio con alto volumen de pedidos.</p>
+                    
+                    <a href="#contacto" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i> Quiero pantallas de autopedido
+                    </a>
+                </div>
+                
+                <div class="kioscos-mock fade-in" data-delay="0.3s">
+                    <div class="kiosk-screen">
+                        <div class="kiosk-header">
+                            <i class="fas fa-hamburger"></i>
+                            <h4>Haz tu pedido</h4>
+                            <span class="kiosk-badge">Demo</span>
+                        </div>
+                        <div class="kiosk-categories">
+                            <span class="category active">Hamburguesas</span>
+                            <span class="category">Patatas</span>
+                            <span class="category">Bebidas</span>
+                            <span class="category">Postres</span>
+                        </div>
+                        <div class="kiosk-items">
+                            <div class="kiosk-item" data-item="Hamburguesa Clásica" data-price="8.50">
+                                <div class="item-info">
+                                    <span class="item-name">Hamburguesa Clásica</span>
+                                    <span class="item-price">8,50 €</span>
+                                </div>
+                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
+                            </div>
+                            <div class="kiosk-item" data-item="Doble Queso" data-price="11.90">
+                                <div class="item-info">
+                                    <span class="item-name">Doble Queso</span>
+                                    <span class="item-price">11,90 €</span>
+                                </div>
+                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
+                            </div>
+                            <div class="kiosk-item" data-item="Crispy Pollo" data-price="9.90">
+                                <div class="item-info">
+                                    <span class="item-name">Crispy Pollo</span>
+                                    <span class="item-price">9,90 €</span>
+                                </div>
+                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
+                            </div>
+                            <div class="kiosk-item" data-item="Patatas Fritas" data-price="3.50">
+                                <div class="item-info">
+                                    <span class="item-name">Patatas Fritas</span>
+                                    <span class="item-price">3,50 €</span>
+                                </div>
+                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
+                            </div>
+                        </div>
+                        <div class="kiosk-cart">
+                            <h5>Tu pedido <i class="fas fa-shopping-cart"></i></h5>
+                            <div class="cart-items">
+                                <!-- Los items se insertarán desde JS -->
+                            </div>
+                            <div class="cart-total">
+                                <span>Total:</span>
+                                <span class="total-amount">0,00 €</span>
+                            </div>
+                            <button class="cart-checkout" disabled>Pagar (Demo)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE LOGOS (PROYECTOS) -->
+    <section class="logos" id="proyectos">
+        <div class="logos-container">
+            <p class="logos-label">Confían en nosotros</p>
+            <div class="logos-grid">
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #0052ff;"><i class="fab fa-stripe"></i><span>Stripe</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #00b67a;"><i class="fab fa-spotify"></i><span>Spotify</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #ff5a5f;"><i class="fab fa-airbnb"></i><span>Airbnb</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #9146ff;"><i class="fab fa-twitch"></i><span>Twitch</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #0a66c2;"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #e50914;"><i class="fab fa-netflix"></i><span>Netflix</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA ORIENTATIVA -->
+    <section class="calculator" id="calculadora">
+        <div class="calculator-container">
+            <div class="calculator-header">
+                <h2 class="calculator-title">Descubre cuánto podría costar tu proyecto</h2>
+                <p class="calculator-subtitle">Simula tu inversión digital</p>
+            </div>
+
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="project-type">Tipo de proyecto</label>
+                    <select id="project-type" class="form-control">
+                        <option value="landing">Landing page</option>
+                        <option value="corporate">Web corporativa</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="custom">Web a medida</option>
+                        <option value="kiosk">Kiosco de autopedido</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Funcionalidades extra</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label"><input type="checkbox" value="seo"> SEO avanzado</label>
+                        <label class="checkbox-label"><input type="checkbox" value="blog"> Blog</label>
+                        <label class="checkbox-label"><input type="checkbox" value="multilang"> Multidioma</label>
+                        <label class="checkbox-label"><input type="checkbox" value="booking"> Sistema de reservas</label>
+                        <label class="checkbox-label"><input type="checkbox" value="crm"> Integración CRM</label>
+                        <label class="checkbox-label"><input type="checkbox" value="premium"> Diseño premium</label>
+                        <label class="checkbox-label"><input type="checkbox" value="pagos"> Pasarela de pagos</label>
+                        <label class="checkbox-label"><input type="checkbox" value="app"> App móvil</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="urgency">Urgencia</label>
+                    <select id="urgency" class="form-control">
+                        <option value="1">Normal (4-6 semanas)</option>
+                        <option value="1.3">Prioritario (+30%, 2-3 semanas)</option>
+                    </select>
+                </div>
+
+                <div class="calculator-result">
+                    <span class="result-label">Rango estimado</span>
+                    <span class="result-value" id="result-value">2.400 € – 3.200 €</span>
+                    <p class="result-disclaimer">*Cálculo orientativo. Presupuesto final sujeto a requisitos específicos.</p>
+                </div>
+
+                <a href="#contacto" class="btn btn-primary btn-block">Solicitar propuesta personalizada</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN LEGAL -->
     <section class="legal" id="legal">
         <div class="container">
             <div class="section-header">
@@ -220,8 +374,8 @@
         </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section class="contact" id="contacta">
+    <!-- SECCIÓN CONTACTO -->
+    <section class="contact" id="contacto">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">CONTACTA <span class="highlight">CON NOSOTROS</span></h2>
@@ -238,7 +392,7 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <p>hola@nexorasolutions.com</p>
+                                <p>hola@korasolutions.com</p>
                             </div>
                         </div>
                         
@@ -301,50 +455,49 @@
             </div>
         </div>
     </section>
+</main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <span class="logo-text">NEXORA<span class="logo-accent">SOLUTIONS</span></span>
-                    </a>
-                    <p class="footer-description">
-                        Creamos productos digitales únicos que definen el punto distintivo de cada negocio.
-                    </p>
-                </div>
-                
-                <div class="footer-links">
-                    <h3 class="footer-title">NAVEGACIÓN</h3>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#legal">Legal</a></li>
-                        <li><a href="#contacta">Contacta</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-cta">
-                    <h3 class="footer-title">¿LISTO PARA COMENZAR?</h3>
-                    <p>Tu proyecto digital único está a un mensaje de distancia.</p>
-                    <a href="#contacta" class="btn btn-secondary">Solicitar consulta</a>
-                </div>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">KORA<span class="logo-dot"></span></a>
+                <p class="footer-description">
+                    Creamos productos digitales únicos que definen el punto distintivo de cada negocio.
+                </p>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Nexora Solutions. Todos los derechos reservados.</p>
-                <div class="footer-legal">
-                    <a href="#">Aviso legal</a>
-                    <a href="#">Política de privacidad</a>
-                    <a href="#">Política de cookies</a>
-                </div>
+            <div class="footer-links">
+                <h3 class="footer-title">NAVEGACIÓN</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#kioscos">Kioscos</a></li>
+                    <li><a href="#legal">Legal</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-cta">
+                <h3 class="footer-title">¿LISTO PARA COMENZAR?</h3>
+                <p>Tu proyecto digital único está a un mensaje de distancia.</p>
+                <a href="#contacto" class="btn btn-secondary">Solicitar consulta</a>
             </div>
         </div>
-    </footer>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> KORA Solutions. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Política de cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-</body>
-</html>
+<script src="script.js"></script>
+</body> </html> ```
