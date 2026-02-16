@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>KORA | Estrategia y tecnología digital</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link rel="stylesheet" href="style.css"> </head> <body>
-    
-<!-- HEADER REDISEÑADO: PREMIUM, SUTIL, DINÁMICO -->
+<!DOCTYPE html><html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>KORA | Estrategia y tecnología digital</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link rel="stylesheet" href="style.css"> </head> <body>
+
+<!-- HEADER REDISEÑADO: PREMIUM, CON MÁS ESPACIO SUPERIOR -->
 <header class="header">
     <div class="header-container">
         <a href="#" class="logo">KORA<span class="logo-dot"></span></a>
@@ -27,7 +27,7 @@
 </header>
 
 <main>
-    <!-- HERO REDISEÑADO: CLAIM + ELEMENTO ABSTRACTO ANIMADO -->
+    <!-- HERO CON MÁS ESPACIO SUPERIOR PARA EVITAR SOLAPAMIENTO -->
     <section class="hero" id="inicio">
         <div class="hero-container">
             <div class="hero-content">
@@ -164,7 +164,7 @@
                     </p>
                     <ul class="service-list">
                         <li>Catálogo digital interactivo</li>
-                        <li>Pago integrado (datáfono/QR)</li>
+                        <li>Pago integrado</li>
                         <li>Envío directo a cocina</li>
                     </ul>
                 </div>
@@ -172,7 +172,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN KIOSCOS (NUEVA SECCIÓN DETALLADA) -->
+    <!-- SECCIÓN KIOSCOS - ESTILO URBANO CON FOTOS -->
     <section class="kioscos" id="kioscos">
         <div class="container">
             <div class="section-header">
@@ -217,58 +217,53 @@
                 </div>
                 
                 <div class="kioscos-mock fade-in" data-delay="0.3s">
-                    <div class="kiosk-screen">
-                        <div class="kiosk-header">
+                    <div class="kiosk-screen-urban">
+                        <div class="kiosk-header-urban">
                             <i class="fas fa-hamburger"></i>
-                            <h4>Haz tu pedido</h4>
-                            <span class="kiosk-badge">Demo</span>
+                            <h4>BURGER LAB</h4>
+                            <span class="kiosk-badge-urban">Pide ya!</span>
                         </div>
-                        <div class="kiosk-categories">
-                            <span class="category active">Hamburguesas</span>
-                            <span class="category">Patatas</span>
-                            <span class="category">Bebidas</span>
-                            <span class="category">Postres</span>
+                        <div class="kiosk-categories-urban">
+                            <span class="category-urban active">Hamburguesas</span>
+                            <span class="category-urban">Patatas</span>
+                            <span class="category-urban">Bebidas</span>
+                            <span class="category-urban">Postres</span>
                         </div>
-                        <div class="kiosk-items">
-                            <div class="kiosk-item" data-item="Hamburguesa Clásica" data-price="8.50">
-                                <div class="item-info">
-                                    <span class="item-name">Hamburguesa Clásica</span>
-                                    <span class="item-price">8,50 €</span>
+                        <div class="kiosk-items-urban">
+                            <div class="kiosk-item-urban" data-item="Hamburguesa Clásica" data-price="8.50">
+                                <div class="item-image-urban" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80');"></div>
+                                <div class="item-info-urban">
+                                    <span class="item-name-urban">Hamburguesa Clásica</span>
+                                    <span class="item-price-urban">8,50 €</span>
+                                    <span class="item-desc-urban">Carne 100% vaca, lechuga, tomate</span>
                                 </div>
-                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
+                                <button class="item-add-urban" aria-label="Añadir al carrito">+</button>
                             </div>
-                            <div class="kiosk-item" data-item="Doble Queso" data-price="11.90">
-                                <div class="item-info">
-                                    <span class="item-name">Doble Queso</span>
-                                    <span class="item-price">11,90 €</span>
+                            
+                            
+                            <div class="kiosk-item-urban" data-item="Patatas Fritas" data-price="3.50">
+                                <div class="item-image-urban" style="background-image: url('https://images.unsplash.com/photo-1576107232684-1279f390859f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80');"></div>
+                                <div class="item-info-urban">
+                                    <span class="item-name-urban">Patatas Fritas</span>
+                                    <span class="item-price-urban">3,50 €</span>
+                                    <span class="item-desc-urban">Crujientes, sal marina</span>
                                 </div>
-                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
-                            </div>
-                            <div class="kiosk-item" data-item="Crispy Pollo" data-price="9.90">
-                                <div class="item-info">
-                                    <span class="item-name">Crispy Pollo</span>
-                                    <span class="item-price">9,90 €</span>
-                                </div>
-                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
-                            </div>
-                            <div class="kiosk-item" data-item="Patatas Fritas" data-price="3.50">
-                                <div class="item-info">
-                                    <span class="item-name">Patatas Fritas</span>
-                                    <span class="item-price">3,50 €</span>
-                                </div>
-                                <button class="item-add" aria-label="Añadir al carrito">+ Añadir</button>
+                                <button class="item-add-urban" aria-label="Añadir al carrito">+</button>
                             </div>
                         </div>
-                        <div class="kiosk-cart">
-                            <h5>Tu pedido <i class="fas fa-shopping-cart"></i></h5>
-                            <div class="cart-items">
+                        <div class="kiosk-cart-urban">
+                            <div class="cart-header-urban">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Tu pedido</span>
+                            </div>
+                            <div class="cart-items-urban">
                                 <!-- Los items se insertarán desde JS -->
                             </div>
-                            <div class="cart-total">
+                            <div class="cart-total-urban">
                                 <span>Total:</span>
-                                <span class="total-amount">0,00 €</span>
+                                <span class="total-amount-urban">0,00 €</span>
                             </div>
-                            <button class="cart-checkout" disabled>Pagar (Demo)</button>
+                            <button class="cart-checkout-urban" disabled>Pagar ahora</button>
                         </div>
                     </div>
                 </div>
@@ -374,7 +369,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
+    <!-- SECCIÓN CONTACTO CON FORMULARIO REDISEÑADO -->
     <section class="contact" id="contacto">
         <div class="container">
             <div class="section-header">
@@ -447,7 +442,7 @@
                             <label for="privacy">Acepto la política de privacidad</label>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary btn-large">
+                        <button type="submit" class="btn-submit">
                             <i class="fas fa-paper-plane"></i> Enviar mensaje
                         </button>
                     </form>
@@ -500,4 +495,4 @@
 </footer>
 
 <script src="script.js"></script>
-</body> </html> ```
+</body> </html> 
