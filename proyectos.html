@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>KORA | Proyectos</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link rel="stylesheet" href="style.css"> </head> <body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+        <a href="index.html" class="logo">KORA<span class="logo-dot"></span></a>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link" data-text="Inicio">Inicio</a></li>
+                <li class="nav-item dropdown">
+                    <a href="sobre-nosotros.html" class="nav-link" data-text="Sobre Nosotros">Sobre Nosotros</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="proyectos.html" class="dropdown-link">Nuestros Proyectos</a></li>
+                        <li><a href="sobre-nosotros.html" class="dropdown-link">Más sobre KORA</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="servicios.html" class="nav-link" data-text="Servicios">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="servicios.html#diseno" class="dropdown-link">Diseño de Identidad</a></li>
+                        <li><a href="servicios.html#desarrollo" class="dropdown-link">Desarrollo Web</a></li>
+                        <li><a href="servicios.html#ia" class="dropdown-link">Automatizaciones IA</a></li>
+                        <li><a href="servicios.html#kioscos" class="dropdown-link">Kioscos de Autopedido</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="proyectos.html" class="nav-link" data-text="Proyectos">Proyectos</a></li>
+                <li class="nav-item"><a href="index.html#contacto" class="nav-link" data-text="Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="index.html#contacto" class="btn btn-contact">Contacta</a>
+            <button class="menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero" style="padding: 8rem 2rem 4rem; text-align: center;">
+        <div class="container">
+            <h1 class="page-title" style="font-size: 3.5rem; margin-bottom: 1rem;">Nuestros <span class="highlight">Proyectos</span></h1>
+            <p class="page-subtitle" style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Empresas que han confiado en nosotros para su transformación digital.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE LOGOS (PROYECTOS) - Versión expandida -->
+    <section class="logos" style="padding-top: 0;">
+        <div class="logos-container">
+            <p class="logos-label">CLIENTES Y COLABORADORES</p>
+            <div class="logos-grid" style="gap: 4rem 6rem;">
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #0052ff;"><i class="fab fa-stripe"></i><span>Stripe</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #00b67a;"><i class="fab fa-spotify"></i><span>Spotify</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #ff5a5f;"><i class="fab fa-airbnb"></i><span>Airbnb</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #9146ff;"><i class="fab fa-twitch"></i><span>Twitch</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #0a66c2;"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #e50914;"><i class="fab fa-netflix"></i><span>Netflix</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #f48024;"><i class="fab fa-stack-overflow"></i><span>Stack Overflow</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #1769ff;"><i class="fab fa-behance"></i><span>Behance</span></a>
+                <a href="#" target="_blank" class="logo-card" style="--logo-color: #ff4500;"><i class="fab fa-reddit-alien"></i><span>Reddit</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PROYECTOS DESTACADOS (ejemplos) -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 50px;">Proyectos <span class="highlight">Destacados</span></h2>
+            
+            <div class="projects-showcase" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                
+                <div class="project-item" style="background: var(--bg-elevated); border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-color);">
+                    <div style="height: 200px; background: linear-gradient(135deg, #3a5a78, #1e2f3f); display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-spotify" style="font-size: 4rem; color: #1DB954;"></i>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Spotify Clone</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Desarrollo de una aplicación web similar a Spotify con funcionalidades de reproducción y listas personalizadas.</p>
+                        <span style="color: #ff6b6b;">Ver proyecto →</span>
+                    </div>
+                </div>
+                
+                <div class="project-item" style="background: var(--bg-elevated); border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-color);">
+                    <div style="height: 200px; background: linear-gradient(135deg, #ff5a5f, #b03d42); display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-airbnb" style="font-size: 4rem; color: #ffffff;"></i>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Plataforma de Reservas</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Desarrollo de un sistema de reservas para alojamientos turísticos con pasarela de pago integrada.</p>
+                        <span style="color: #ff6b6b;">Ver proyecto →</span>
+                    </div>
+                </div>
+                
+                <div class="project-item" style="background: var(--bg-elevated); border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-color);">
+                    <div style="height: 200px; background: linear-gradient(135deg, #0a66c2, #063a70); display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-linkedin" style="font-size: 4rem; color: #ffffff;"></i>
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Red Social Corporativa</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Desarrollo de una red social interna para una empresa, con perfiles, mensajería y paneles de administración.</p>
+                        <span style="color: #ff6b6b;">Ver proyecto →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding: 60px 0; text-align: center; background-color: var(--bg-secondary);">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">¿Quieres ser el próximo?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Cuéntanos tu idea y hagamos realidad tu proyecto.</p>
+            <a href="index.html#contacto" class="btn btn-primary">Contacta con nosotros</a>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">KORA<span class="logo-dot"></span></a>
+                <p class="footer-description">
+                    Creamos productos digitales únicos que definen el punto distintivo de cada negocio.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-title">NAVEGACIÓN</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="index.html#legal">Legal</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-cta">
+                <h3 class="footer-title">¿LISTO PARA COMENZAR?</h3>
+                <p>Tu proyecto digital único está a un mensaje de distancia.</p>
+                <a href="index.html#contacto" class="btn btn-secondary">Solicitar consulta</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> KORA Solutions. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Política de cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body> </html>

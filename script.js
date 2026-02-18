@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('.nav');
     
     if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             nav.classList.toggle('active');
             
             // Animar las líneas del menú hamburguesa
@@ -89,6 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
                 spans[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
             } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.transform = 'none';
+            }
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            if (nav && nav.classList.contains('active') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
+                nav.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
                 spans[0].style.transform = 'none';
                 spans[1].style.transform = 'none';
             }
@@ -269,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            if (href !== '#') {
+            if (href !== '#' && href.startsWith('#')) {
                 e.preventDefault();
                 
                 const targetId = href.substring(1);
@@ -297,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ========== EFECTO DE HOVER EN TARJETAS ==========
-    const cards = document.querySelectorAll('.service-card, .value-item, .legal-card');
+    const cards = document.querySelectorAll('.service-card, .value-item, .legal-card, .story-card');
     
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
@@ -314,18 +325,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentYear = new Date().getFullYear();
     document.getElementById('currentYear').textContent = currentYear;
     
-    // ========== LÓGICA DE CARRITO DEMO PARA KIOSKO ==========
+    // ========== LÓGICA DE CARRITO DEMO PARA KIOSKO (en servicios.html) ==========
     const cart = [];
-    const cartContainer = document.querySelector('.cart-items');
-    const totalAmountSpan = document.querySelector('.total-amount');
-    const checkoutBtn = document.querySelector('.cart-checkout');
+    const cartContainer = document.querySelector('.cart-items-urban'); // Corregido selector
+    const totalAmountSpan = document.querySelector('.total-amount-urban'); // Corregido selector
+    const checkoutBtn = document.querySelector('.cart-checkout-urban'); // Corregido selector
     
     function updateCartDisplay() {
         if (!cartContainer) return;
         
         if (cart.length === 0) {
             cartContainer.innerHTML = '<div style="color: #888; text-align: center; padding: 10px;">Carrito vacío</div>';
-            totalAmountSpan.textContent = '0,00 €';
+            if (totalAmountSpan) totalAmountSpan.textContent = '0,00 €';
             if (checkoutBtn) checkoutBtn.disabled = true;
             return;
         }
@@ -335,15 +346,15 @@ document.addEventListener('DOMContentLoaded', function() {
         cart.forEach((item, index) => {
             total += item.price;
             html += `
-                <div class="cart-item">
+                <div class="cart-item-urban">
                     <span>${item.name}</span>
                     <span class="cart-item-price">${item.price.toFixed(2)} €</span>
-                    <button class="cart-item-remove" data-index="${index}" aria-label="Eliminar item">×</button>
+                    <button class="cart-item-remove" data-index="${index}" aria-label="Eliminar item" style="background: none; border: none; color: #ff6b6b; font-size: 1.2rem; cursor: pointer;">×</button>
                 </div>
             `;
         });
         cartContainer.innerHTML = html;
-        totalAmountSpan.textContent = total.toFixed(2) + ' €';
+        if (totalAmountSpan) totalAmountSpan.textContent = total.toFixed(2) + ' €';
         
         // Habilitar/deshabilitar botón de pago
         if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
@@ -358,12 +369,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Añadir items al carrito
-    document.querySelectorAll('.item-add').forEach(btn => {
+    // Añadir items al carrito (para .kiosk-item-urban)
+    document.querySelectorAll('.item-add-urban').forEach(btn => {
         btn.addEventListener('click', function() {
-            const itemDiv = this.closest('.kiosk-item');
-            const itemName = itemDiv.dataset.item || itemDiv.querySelector('.item-name').textContent;
-            const priceText = itemDiv.dataset.price || itemDiv.querySelector('.item-price').textContent;
+            const itemDiv = this.closest('.kiosk-item-urban');
+            const itemName = itemDiv.dataset.item || itemDiv.querySelector('.item-name-urban').textContent;
+            const priceText = itemDiv.dataset.price || itemDiv.querySelector('.item-price-urban').textContent;
             // Extraer número del precio (formato "8,50 €" o "8.50")
             let price = parseFloat(priceText.replace(',', '.').replace('€', '').trim());
             if (isNaN(price)) price = 0;

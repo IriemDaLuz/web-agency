@@ -3,15 +3,28 @@
 <!-- HEADER REDISEÑADO: PREMIUM, CON MÁS ESPACIO SUPERIOR -->
 <header class="header">
     <div class="header-container">
-        <a href="#" class="logo">KORA<span class="logo-dot"></span></a>
+        <a href="index.html" class="logo">KORA<span class="logo-dot"></span></a>
         
         <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="#inicio" class="nav-link" data-text="Inicio">Inicio</a></li>
-                <li class="nav-item"><a href="#sobre-nosotros" class="nav-link" data-text="Sobre Nosotros">Sobre Nosotros</a></li>
-                <li class="nav-item"><a href="#servicios" class="nav-link" data-text="Servicios">Servicios</a></li>
-                <li class="nav-item"><a href="#proyectos" class="nav-link" data-text="Proyectos">Proyectos</a></li>
-                <li class="nav-item"><a href="#kioscos" class="nav-link" data-text="Kioscos">Kioscos</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link" data-text="Inicio">Inicio</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#sobre-nosotros" class="nav-link" data-text="Sobre Nosotros">Sobre Nosotros</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="proyectos.html" class="dropdown-link">Nuestros Proyectos</a></li>
+                        <li><a href="sobre-nosotros.html" class="dropdown-link">Más sobre KORA</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#servicios" class="nav-link" data-text="Servicios">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="servicios.html#diseno" class="dropdown-link">Diseño de Identidad</a></li>
+                        <li><a href="servicios.html#desarrollo" class="dropdown-link">Desarrollo Web</a></li>
+                        <li><a href="servicios.html#ia" class="dropdown-link">Automatizaciones IA</a></li>
+                        <li><a href="servicios.html#kioscos" class="dropdown-link">Kioscos de Autopedido</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="proyectos.html" class="nav-link" data-text="Proyectos">Proyectos</a></li>
                 <li class="nav-item"><a href="#contacto" class="nav-link" data-text="Contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -44,7 +57,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <!-- SECCIÓN SOBRE NOSOTROS (Vista previa) -->
     <section class="about" id="sobre-nosotros">
         <div class="container">
             <div class="section-header">
@@ -85,6 +98,7 @@
                             <p>Enfocados en métricas que importan para tu crecimiento.</p>
                         </div>
                     </div>
+                    <a href="sobre-nosotros.html" class="btn btn-primary" style="margin-top: 20px;">Conócenos mejor <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="about-image">
@@ -99,7 +113,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN SERVICIOS CON 4 TARJETAS (INCLUYENDO KIOSKOS) -->
+    <!-- SECCIÓN SERVICIOS CON 4 TARJETAS (Vista previa que enlaza a servicios.html) -->
     <section class="services" id="servicios">
         <div class="container">
             <div class="section-header">
@@ -116,11 +130,7 @@
                     <p class="service-description">
                         Creamos identidades visuales únicas que comunican los valores de tu marca.
                     </p>
-                    <ul class="service-list">
-                        <li>Branding estratégico</li>
-                        <li>Diseño de logotipo</li>
-                        <li>Guías de estilo visual</li>
-                    </ul>
+                    <a href="servicios.html#diseno" class="btn btn-secondary card-btn">Saber más</a>
                 </div>
                 
                 <div class="service-card">
@@ -131,11 +141,7 @@
                     <p class="service-description">
                         Desarrollamos sitios web a medida con tecnologías modernas y escalables.
                     </p>
-                    <ul class="service-list">
-                        <li>Webs corporativas</li>
-                        <li>E-commerce</li>
-                        <li>Aplicaciones web</li>
-                    </ul>
+                    <a href="servicios.html#desarrollo" class="btn btn-secondary card-btn">Saber más</a>
                 </div>
                 
                 <div class="service-card">
@@ -146,11 +152,7 @@
                     <p class="service-description">
                         Automatizamos tareas repetitivas para ahorrar horas de trabajo.
                     </p>
-                    <ul class="service-list">
-                        <li>Bots entrenados con IA</li>
-                        <li>Automatización de emails</li>
-                        <li>Clasificación de documentos</li>
-                    </ul>
+                    <a href="servicios.html#ia" class="btn btn-secondary card-btn">Saber más</a>
                 </div>
 
                 <!-- SERVICIO DE KIOSKOS DE AUTOPEDIDO -->
@@ -162,116 +164,16 @@
                     <p class="service-description">
                         Digitaliza tu local con pantallas interactivas de autoservicio estilo McDonald's.
                     </p>
-                    <ul class="service-list">
-                        <li>Catálogo digital interactivo</li>
-                        <li>Pago integrado</li>
-                        <li>Envío directo a cocina</li>
-                    </ul>
+                    <a href="servicios.html#kioscos" class="btn btn-secondary card-btn">Saber más</a>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="servicios.html" class="btn btn-primary">Ver todos los servicios <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN KIOSCOS - ESTILO URBANO CON FOTOS -->
-    <section class="kioscos" id="kioscos">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">DIGITALIZACIÓN <span class="highlight">EN LOCAL</span></h2>
-                <p class="section-subtitle">Lleva la experiencia de autopedido a tu establecimiento como McDonald's o Burger King.</p>
-            </div>
-            
-            <div class="kioscos-content">
-                <div class="kioscos-text fade-in">
-                    <h3>Kioscos de autopedido: el futuro de la restauración</h3>
-                    <p>Dile adiós a las colas y a los errores en comanda. Nuestras pantallas de autoservicio permiten a tus clientes explorar el menú, personalizar sus productos y pagar sin necesidad de un camarero.</p>
-                    
-                    <div class="kioscos-benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Menos colas, más rotación</h4>
-                                <p>Reduce tiempos de espera hasta un 40% y atiende más clientes en horas punta.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h4>Aumenta el ticket medio</h4>
-                                <p>Las sugerencias visuales y los combos incrementan la venta cruzada de forma natural.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-bolt"></i>
-                            <div>
-                                <h4>Cero errores</h4>
-                                <p>El cliente introduce su pedido directamente, eliminando malentendidos en la toma de comanda.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="ideal-for"><strong>Ideal para:</strong> Restauración rápida, cafeterías, food trucks, take away, cines y cualquier negocio con alto volumen de pedidos.</p>
-                    
-                    <a href="#contacto" class="btn btn-primary">
-                        <i class="fas fa-arrow-right"></i> Quiero pantallas de autopedido
-                    </a>
-                </div>
-                
-                <div class="kioscos-mock fade-in" data-delay="0.3s">
-                    <div class="kiosk-screen-urban">
-                        <div class="kiosk-header-urban">
-                            <i class="fas fa-hamburger"></i>
-                            <h4>BURGER LAB</h4>
-                            <span class="kiosk-badge-urban">Pide ya!</span>
-                        </div>
-                        <div class="kiosk-categories-urban">
-                            <span class="category-urban active">Hamburguesas</span>
-                            <span class="category-urban">Patatas</span>
-                            <span class="category-urban">Bebidas</span>
-                            <span class="category-urban">Postres</span>
-                        </div>
-                        <div class="kiosk-items-urban">
-                            <div class="kiosk-item-urban" data-item="Hamburguesa Clásica" data-price="8.50">
-                                <div class="item-image-urban" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80');"></div>
-                                <div class="item-info-urban">
-                                    <span class="item-name-urban">Hamburguesa Clásica</span>
-                                    <span class="item-price-urban">8,50 €</span>
-                                    <span class="item-desc-urban">Carne 100% vaca, lechuga, tomate</span>
-                                </div>
-                                <button class="item-add-urban" aria-label="Añadir al carrito">+</button>
-                            </div>
-                            
-                            
-                            <div class="kiosk-item-urban" data-item="Patatas Fritas" data-price="3.50">
-                                <div class="item-image-urban" style="background-image: url('https://images.unsplash.com/photo-1576107232684-1279f390859f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80');"></div>
-                                <div class="item-info-urban">
-                                    <span class="item-name-urban">Patatas Fritas</span>
-                                    <span class="item-price-urban">3,50 €</span>
-                                    <span class="item-desc-urban">Crujientes, sal marina</span>
-                                </div>
-                                <button class="item-add-urban" aria-label="Añadir al carrito">+</button>
-                            </div>
-                        </div>
-                        <div class="kiosk-cart-urban">
-                            <div class="cart-header-urban">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span>Tu pedido</span>
-                            </div>
-                            <div class="cart-items-urban">
-                                <!-- Los items se insertarán desde JS -->
-                            </div>
-                            <div class="cart-total-urban">
-                                <span>Total:</span>
-                                <span class="total-amount-urban">0,00 €</span>
-                            </div>
-                            <button class="cart-checkout-urban" disabled>Pagar ahora</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN DE LOGOS (PROYECTOS) -->
+    <!-- SECCIÓN DE LOGOS (PROYECTOS) - Vista previa -->
     <section class="logos" id="proyectos">
         <div class="logos-container">
             <p class="logos-label">Confían en nosotros</p>
@@ -282,6 +184,9 @@
                 <a href="#" target="_blank" class="logo-card" style="--logo-color: #9146ff;"><i class="fab fa-twitch"></i><span>Twitch</span></a>
                 <a href="#" target="_blank" class="logo-card" style="--logo-color: #0a66c2;"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
                 <a href="#" target="_blank" class="logo-card" style="--logo-color: #e50914;"><i class="fab fa-netflix"></i><span>Netflix</span></a>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="proyectos.html" class="btn btn-secondary">Ver todos los proyectos <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -462,7 +367,7 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="#" class="logo">KORA<span class="logo-dot"></span></a>
+                <a href="index.html" class="logo">KORA<span class="logo-dot"></span></a>
                 <p class="footer-description">
                     Creamos productos digitales únicos que definen el punto distintivo de cada negocio.
                 </p>
@@ -471,11 +376,10 @@
             <div class="footer-links">
                 <h3 class="footer-title">NAVEGACIÓN</h3>
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#kioscos">Kioscos</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
                     <li><a href="#legal">Legal</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
@@ -500,4 +404,4 @@
 </footer>
 
 <script src="script.js"></script>
-</body> </html> 
+</body> </html>
