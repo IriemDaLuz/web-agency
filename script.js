@@ -76,35 +76,70 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ========== MENÚ HAMBURGUESA ==========
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            nav.classList.toggle('active');
-            
-            // Animar las líneas del menú hamburguesa
-            const spans = menuToggle.querySelectorAll('span');
-            if (nav.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
-                spans[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.transform = 'none';
-            }
-        });
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
 
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', function(event) {
-            if (nav && nav.classList.contains('active') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
-                nav.classList.remove('active');
-                const spans = menuToggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.transform = 'none';
+if (menuToggle) {
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        nav.classList.toggle('active');
+        
+        // Animar las líneas del menú hamburguesa
+        const spans = menuToggle.querySelectorAll('span');
+        if (nav.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+            spans[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+            
+            // Prevenir scroll del body cuando el menú está abierto
+            document.body.style.overflow = 'hidden';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.transform = 'none';
+            
+            // Restaurar scroll
+            document.body.style.overflow = '';
+            
+            // Cerrar todos los dropdowns
+            document.querySelectorAll('.nav .dropdown').forEach(drop => {
+                drop.classList.remove('active');
+            });
+        }
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', function(event) {
+        if (nav && nav.classList.contains('active') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
+            nav.classList.remove('active');
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.transform = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Manejar dropdown en móvil
+    const dropdownItems = document.querySelectorAll('.nav .dropdown > .nav-link');
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
             }
         });
+    });
+}
+
+// Cerrar menú al hacer scroll (opcional, mejora UX)
+window.addEventListener('scroll', function() {
+    if (nav && nav.classList.contains('active') && window.scrollY > 100) {
+        nav.classList.remove('active');
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.transform = 'none';
+        document.body.style.overflow = '';
     }
+});
     
     // ========== ANIMACIONES AL SCROLL ==========
     const fadeElements = document.querySelectorAll('.fade-in');
