@@ -116,7 +116,7 @@ section {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 2.5rem 2rem; /* Aumentado de 2rem a 2.5rem para más espacio superior */
+    padding: 1rem 1.5rem; /* Aumentado de 2rem a 2.5rem para más espacio superior */
     transition: var(--transition-smooth);
     background-color: rgba(11, 11, 11, 0.8);
     backdrop-filter: blur(12px);
@@ -189,11 +189,11 @@ section {
     transition: color 0.3s ease;
 }
 
-/* Efecto de glow sutil (sin movimiento) */
+/* Efecto de glow sutil */
 .nav-link::before {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 5px;
     left: 0;
     width: 0;
     height: 1px;
@@ -206,7 +206,7 @@ section {
 }
 
 .nav-link:hover::before {
-    width: 100%;
+    width: 130%;
 }
 
 /* Efecto de glow adicional */
