@@ -1533,6 +1533,16 @@ section {
     transition: transform 0.5s ease;
 }
 
+.contact-item a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--text-primary);
+}
+
 .contact-item:hover i {
     transform: rotateY(180deg) scale(1.1);
 }
