@@ -173,7 +173,7 @@ section {
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 3rem;
     align-items: center;
 }
 
@@ -184,10 +184,10 @@ section {
 .nav-link {
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1.06rem;
     font-weight: 400;
     letter-spacing: 0.02em;
-    padding: 0.5rem 0;
+    padding: 0.8rem 0;
     position: relative;
     transition: color 0.3s ease;
     white-space: nowrap;
@@ -197,10 +197,10 @@ section {
 .nav-link::before {
     content: '';
     position: absolute;
-    bottom: 5px;
+    bottom: 4px;
     left: 0;
     width: 0;
-    height: 1px;
+    height: 2px;
     background: linear-gradient(90deg, var(--text-primary), transparent 80%);
     transition: width 0.3s ease;
 }
@@ -1395,7 +1395,7 @@ section {
 
 /* SECCIÓN LEGAL */
 .legal {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     position: relative;
     overflow: hidden;
 }
@@ -1479,7 +1479,7 @@ section {
 
 /* SECCIÓN CONTACTO CON FORMULARIO REDISEÑADO */
 .contact {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 .contact-content {
