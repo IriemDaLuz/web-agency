@@ -3,7 +3,12 @@
 .vfrc-widget-container {
     z-index: 999999 !important; /* Asegura que esté por encima de todo */
 }
-
+@media (max-width: 768px) {
+    .vfrc-launcher {
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+}
 /* Botón flotante del chatbot */
 .vfrc-launcher {
     background-color: #ff6b6b !important; /* Color principal de KORA */
