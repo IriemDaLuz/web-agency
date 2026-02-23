@@ -12,7 +12,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 2rem 2.5rem;
+    padding: 1.9rem 2.5rem;
     transition: var(--transition-smooth);
     background-color: rgba(11, 11, 11, 0.8);
     backdrop-filter: blur(12px);
@@ -35,15 +35,20 @@
 
 /* Logo */
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 500;
     letter-spacing: -0.02em;
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.1rem;
     transform-style: preserve-3d;
+    transition: var(--transition-smooth);
+}
+
+.logo:hover {
+    color: var(--text-primary);
 }
 
 .logo-dot {
@@ -224,6 +229,9 @@
     color: var(--text-secondary);
     text-decoration: none;
     transition: var(--transition-smooth);
+}
+footer .logo {
+    width: fit-content;
 }
 
 .footer a:hover {
