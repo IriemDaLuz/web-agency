@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/proyectos.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -64,72 +65,91 @@
             </div>
         </section>
         <!--
-    <section class="logos" style="padding-top: 0;">
-        <div class="logos-container">
-            <p class="logos-label">CLIENTES Y COLABORADORES</p>
-            <div class="logos-grid" style="gap: 4rem 6rem;">
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #0052ff;"><i class="fab fa-stripe"></i><span>Stripe</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #00b67a;"><i class="fab fa-spotify"></i><span>Spotify</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #ff5a5f;"><i class="fab fa-airbnb"></i><span>Airbnb</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #9146ff;"><i class="fab fa-twitch"></i><span>Twitch</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #0a66c2;"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #e50914;"><i class="fab fa-netflix"></i><span>Netflix</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #f48024;"><i class="fab fa-stack-overflow"></i><span>Stack Overflow</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #1769ff;"><i class="fab fa-behance"></i><span>Behance</span></a>
-                <a href="#" target="_blank" class="logo-card" style="--logo-color: #ff4500;"><i class="fab fa-reddit-alien"></i><span>Reddit</span></a>
-            </div>
-        </div>
-    </section>
+        <section class="logos">
+            <div class="logos-container">
+                <p class="logos-label">CLIENTES Y COLABORADORES</p>
 
-    <section style="padding: 80px 0;">
-        <div class="container">
-            <h2 class="section-title" style="margin-bottom: 50px;">Proyectos <span class="highlight">Destacados</span></h2>
-            
-            <div class="projects-showcase" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                
-                <div class="project-item" style="background: var(--bg-elevated); border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-color);">
-                    <div style="height: 200px; background: linear-gradient(135deg, #3a5a78, #1e2f3f); display: flex; align-items: center; justify-content: center;">
-                        <i class="fab fa-spotify" style="font-size: 4rem; color: #1DB954;"></i>
-                    </div>
-                    <div style="padding: 25px;">
-                        <h3 style="margin-bottom: 10px;">Spotify Clone</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Desarrollo de una aplicación web similar a Spotify con funcionalidades de reproducción y listas personalizadas.</p>
-                        <span style="color: #ff6b6b;">Ver proyecto →</span>
-                    </div>
-                </div>
-                
-                <div class="project-item" style="background: var(--bg-elevated); border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-color);">
-                    <div style="height: 200px; background: linear-gradient(135deg, #ff5a5f, #b03d42); display: flex; align-items: center; justify-content: center;">
-                        <i class="fab fa-airbnb" style="font-size: 4rem; color: #ffffff;"></i>
-                    </div>
-                    <div style="padding: 25px;">
-                        <h3 style="margin-bottom: 10px;">Plataforma de Reservas</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Desarrollo de un sistema de reservas para alojamientos turísticos con pasarela de pago integrada.</p>
-                        <span style="color: #ff6b6b;">Ver proyecto →</span>
-                    </div>
-                </div>
-                
-                <div class="project-item" style="background: var(--bg-elevated); border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-color);">
-                    <div style="height: 200px; background: linear-gradient(135deg, #0a66c2, #063a70); display: flex; align-items: center; justify-content: center;">
-                        <i class="fab fa-linkedin" style="font-size: 4rem; color: #ffffff;"></i>
-                    </div>
-                    <div style="padding: 25px;">
-                        <h3 style="margin-bottom: 10px;">Red Social Corporativa</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px;">Desarrollo de una red social interna para una empresa, con perfiles, mensajería y paneles de administración.</p>
-                        <span style="color: #ff6b6b;">Ver proyecto →</span>
-                    </div>
+                <div class="logos-grid">
+                    <a href="#" target="_blank" class="logo-card stripe">
+                        <i class="fab fa-stripe"></i><span>Stripe</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card spotify">
+                        <i class="fab fa-spotify"></i><span>Spotify</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card airbnb">
+                        <i class="fab fa-airbnb"></i><span>Airbnb</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card twitch">
+                        <i class="fab fa-twitch"></i><span>Twitch</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card linkedin">
+                        <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card netflix">
+                        <i class="fab fa-netflix"></i><span>Netflix</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card stackoverflow">
+                        <i class="fab fa-stack-overflow"></i><span>Stack Overflow</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card behance">
+                        <i class="fab fa-behance"></i><span>Behance</span>
+                    </a>
+                    <a href="#" target="_blank" class="logo-card reddit">
+                        <i class="fab fa-reddit-alien"></i><span>Reddit</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section style="padding: 60px 0; text-align: center; background-color: var(--bg-secondary);">
-        <div class="container">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">¿Quieres ser el próximo?</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 30px;">Cuéntanos tu idea y hagamos realidad tu proyecto.</p>
-            <a href="index.html#contacto" class="btn btn-primary">Contacta con nosotros</a>
-        </div>
-    </section>
+        <section class="projects">
+            <div class="container">
+                <h2 class="section-title">
+                    Proyectos <span class="highlight">Destacados</span>
+                </h2>
+                <div class="projects-showcase">
+                    <div class="project-item">
+                        <div class="project-header spotify-gradient">
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <div class="project-body">
+                            <h3>Spotify Clone</h3>
+                            <p>Desarrollo de una aplicación web similar a Spotify con funcionalidades de reproducción y listas personalizadas.</p>
+                            <span class="project-link">Ver proyecto →</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header airbnb-gradient">
+                            <i class="fab fa-airbnb"></i>
+                        </div>
+                        <div class="project-body">
+                            <h3>Plataforma de Reservas</h3>
+                            <p>Desarrollo de un sistema de reservas para alojamientos turísticos con pasarela de pago integrada.</p>
+                            <span class="project-link">Ver proyecto →</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header linkedin-gradient">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="project-body">
+                            <h3>Red Social Corporativa</h3>
+                            <p>Desarrollo de una red social interna para una empresa, con perfiles, mensajería y paneles de administración.</p>
+                            <span class="project-link">Ver proyecto →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>¿Quieres ser el próximo?</h2>
+                <p>Cuéntanos tu idea y hagamos realidad tu proyecto.</p>
+                <a href="index.html#contacto" class="btn btn-primary">Contacta con nosotros</a>
+            </div>
+        </section>
     -->
     </main>
 

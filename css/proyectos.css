@@ -1,3 +1,154 @@
 /* ======================================================
    ESTILOS PARA proyectos.html
    ====================================================== */
+.logos {
+    padding: 4rem 2rem 6rem 2rem;
+    background-color: var(--bg-primary);
+    padding-top: 0;
+}
+
+.logos-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logos-label {
+    text-align: center;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 4rem 6rem;
+}
+
+.logo-card {
+    text-decoration: none;
+    color: var(--text-tertiary);
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-smooth);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.2rem;
+}
+
+.logo-card i {
+    font-size: 3rem;
+    color: var(--logo-color);
+    transition: var(--transition-smooth);
+}
+
+.logo-card span {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--transition-smooth);
+}
+
+.logo-card:hover {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.logo-card:hover i {
+    color: var(--logo-color, var(--text-primary));
+    filter: drop-shadow(0 0 8px var(--logo-color));
+}
+
+.logo-card:hover span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Colores logos */
+.logo-card.stripe { --logo-color: #0052ff; }
+.logo-card.spotify { --logo-color: #00b67a; }
+.logo-card.airbnb { --logo-color: #ff5a5f; }
+.logo-card.twitch { --logo-color: #9146ff; }
+.logo-card.linkedin { --logo-color: #0a66c2; }
+.logo-card.netflix { --logo-color: #e50914; }
+.logo-card.stackoverflow { --logo-color: #f48024; }
+.logo-card.behance { --logo-color: #1769ff; }
+.logo-card.reddit { --logo-color: #ff4500; }
+
+/* =========================
+   PROYECTOS
+========================= */
+.projects {
+    padding: 80px 0;
+}
+
+.projects-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    background: var(--bg-elevated);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.project-header {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-header i {
+    font-size: 4rem;
+    color: #fff;
+}
+
+/* Gradientes */
+.spotify-gradient {
+    background: linear-gradient(135deg, #3a5a78, #1e2f3f);
+}
+
+.airbnb-gradient {
+    background: linear-gradient(135deg, #ff5a5f, #b03d42);
+}
+
+.linkedin-gradient {
+    background: linear-gradient(135deg, #0a66c2, #063a70);
+}
+
+.project-body {
+    padding: 25px;
+}
+
+.project-body p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.project-link {
+    color: #ff6b6b;
+}
+
+/* =========================
+   CTA
+========================= */
+.cta {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--bg-secondary);
+}
+
+.cta p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}

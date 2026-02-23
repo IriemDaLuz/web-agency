@@ -875,75 +875,7 @@
     transform: scale(1.02);
 }
 
-/* SECCIÓN DE LOGOS */
-.logos {
-    padding: 4rem 2rem 6rem 2rem;
-    background-color: var(--bg-primary);
-}
 
-.logos-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.logos-label {
-    text-align: center;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 0.8rem;
-    margin-bottom: 3rem;
-}
-
-.logos-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem 5rem;
-}
-
-.logo-card {
-    text-decoration: none;
-    color: var(--text-tertiary);
-    font-size: 1.2rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition-smooth);
-    border-bottom: 1px solid transparent;
-    padding-bottom: 0.2rem;
-}
-
-.logo-card i {
-    font-size: 2rem;
-    transition: var(--transition-smooth);
-}
-
-.logo-card span {
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: var(--transition-smooth);
-}
-
-.logo-card:hover {
-    color: var(--text-primary);
-    border-bottom-color: var(--text-primary);
-    transform: translateY(-2px);
-}
-
-.logo-card:hover i {
-    color: var(--logo-color, var(--text-primary));
-    filter: drop-shadow(0 0 8px var(--logo-color));
-}
-
-.logo-card:hover span {
-    opacity: 1;
-    transform: translateX(0);
-}
 
 /* CALCULADORA PREMIUM */
 .calculator {
