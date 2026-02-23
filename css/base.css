@@ -112,8 +112,12 @@ section {
     position: relative;
 }
 
-img, i {
+img, i, select, .checkbox-label, #privacy-label, video {
     user-select: none;
+}
+
+textarea {
+    resize: none;
 }
 
 /* ======================================================
