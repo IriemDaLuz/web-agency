@@ -446,10 +446,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Precios base por tipo de proyecto
         const basePrices = {
             landing: 1000,
-            corporate: 2200,
-            ecommerce: 2800,
-            custom: 3500,
-            kiosk: 2800
+            corporate: 1600,
+            ecommerce: 1800,
+            custom: 2000
         };
 
         // Precios de funcionalidades extra
