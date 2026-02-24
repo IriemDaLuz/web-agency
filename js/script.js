@@ -1,17 +1,125 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // ========== CARGA DE COMPONENTES REUTILIZABLES ==========
     function loadComponent(id, file) {
-        fetch(file)
+        return fetch(file)
             .then(response => response.text())
-            .then(data => {
-                document.getElementById(id).innerHTML = data;
+            .then(html => {
+                const mount = document.getElementById(id);
+                if (mount) mount.innerHTML = html;
             })
             .catch(error => console.error('Error cargando componente:', error));
     }
 
-    loadComponent("header-placeholder", "tpl/header.html");
-    loadComponent("footer-placeholder", "tpl/footer.html");
+    // ========== INIT DESPUÉS DE CARGAR HEADER/FOOTER ==========
+    function initCurrentYear() {
+        const el = document.getElementById('currentYear');
+        if (el) el.textContent = new Date().getFullYear();
+    }
+
+    function initHeaderAndMenu() {
+        const header = document.querySelector('.header');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+
+        const closeMenu = () => {
+            if (!nav || !menuToggle) return;
+            nav.classList.remove('active');
+
+            const spans = menuToggle.querySelectorAll('span');
+            if (spans[0]) spans[0].style.transform = 'none';
+            if (spans[1]) spans[1].style.transform = 'none';
+
+            document.body.style.overflow = '';
+            document.querySelectorAll('.nav .dropdown').forEach(drop => drop.classList.remove('active'));
+        };
+
+        // Header dinámico (solo si existe)
+        if (header) {
+            const onScrollHeader = () => {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            };
+            window.addEventListener('scroll', onScrollHeader, { passive: true });
+            onScrollHeader();
+        }
+
+        // Menú hamburguesa (solo si existe)
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                nav.classList.toggle('active');
+
+                const spans = menuToggle.querySelectorAll('span');
+                if (nav.classList.contains('active')) {
+                    if (spans[0]) spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+                    if (spans[1]) spans[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    closeMenu();
+                }
+            });
+
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function (event) {
+                if (nav.classList.contains('active') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Dropdown en móvil
+            nav.querySelectorAll('.dropdown > .nav-link').forEach(item => {
+                item.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Cerrar menú al hacer scroll (opcional)
+            window.addEventListener('scroll', function () {
+                if (nav.classList.contains('active') && window.scrollY > 100) closeMenu();
+            }, { passive: true });
+
+            // Si haces clic en un enlace del menú, ciérralo (evita "scroll congelado" por overflow hidden)
+            nav.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    if (nav.classList.contains('active')) closeMenu();
+                });
+            });
+        }
+
+        // Scroll suave (si hay anchors tipo #... en la página)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#' || !href.startsWith('#')) return;
+
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (!targetElement) return;
+
+                e.preventDefault();
+
+                const headerHeight = header ? header.offsetHeight : 0;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+                // Cierra menú móvil si estaba abierto
+                if (nav && nav.classList.contains('active')) closeMenu();
+            });
+        });
+    }
+
+    Promise.all([
+        loadComponent("header-placeholder", "tpl/header.html"),
+        loadComponent("footer-placeholder", "tpl/footer.html")
+    ]).then(() => {
+        initHeaderAndMenu();
+        initCurrentYear();
+    });
 
     // ========== SISTEMA DE PARTÍCULAS FLOTANTES ==========
     function createParticles() {
@@ -77,83 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     createParallaxLayers();
 
-    // ========== HEADER DINÁMICO ==========
-    const header = document.querySelector('.header');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // ========== MENÚ HAMBURGUESA ==========
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            nav.classList.toggle('active');
-
-            // Animar las líneas del menú hamburguesa
-            const spans = menuToggle.querySelectorAll('span');
-            if (nav.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
-                spans[1].style.transform = 'rotate(-45deg) translate(4px, -4px)';
-
-                // Prevenir scroll del body cuando el menú está abierto
-                document.body.style.overflow = 'hidden';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.transform = 'none';
-
-                // Restaurar scroll
-                document.body.style.overflow = '';
-
-                // Cerrar todos los dropdowns
-                document.querySelectorAll('.nav .dropdown').forEach(drop => {
-                    drop.classList.remove('active');
-                });
-            }
-        });
-
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', function(event) {
-            if (nav && nav.classList.contains('active') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
-                nav.classList.remove('active');
-                const spans = menuToggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.transform = 'none';
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Manejar dropdown en móvil
-        const dropdownItems = document.querySelectorAll('.nav .dropdown > .nav-link');
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const parent = this.parentElement;
-                    parent.classList.toggle('active');
-                }
-            });
-        });
-    }
-
-    // Cerrar menú al hacer scroll (opcional, mejora UX)
-    window.addEventListener('scroll', function() {
-        if (nav && nav.classList.contains('active') && window.scrollY > 100) {
-            nav.classList.remove('active');
-            const spans = menuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.transform = 'none';
-            document.body.style.overflow = '';
-        }
-    });
-
     // ========== ANIMACIONES AL SCROLL ==========
     const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -181,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // document.addEventListener('mousemove', (e) => {
     //     const mouseX = e.clientX / window.innerWidth;
     //     const mouseY = e.clientY / window.innerHeight;
-        
+
     //     // Efecto en tarjetas de servicios
     //     document.querySelectorAll('.service-card').forEach(card => {
     //         const cardRect = card.getBoundingClientRect();
@@ -216,16 +247,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Efecto al enfocar inputs
         formInputs.forEach(input => {
-            input.addEventListener('focus', function() {
+            input.addEventListener('focus', function () {
                 this.style.boxShadow = '0 0 20px rgba(58, 90, 120, 0.3)';
             });
 
-            input.addEventListener('blur', function() {
+            input.addEventListener('blur', function () {
                 this.style.boxShadow = '';
             });
         });
 
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
             const name = document.getElementById('name').value;
@@ -321,39 +352,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========== SCROLL SUAVE ==========
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-
-            if (href !== '#' && href.startsWith('#')) {
-                e.preventDefault();
-
-                const targetId = href.substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-
-                    // Cerrar menú móvil si está abierto
-                    if (nav && nav.classList.contains('active')) {
-                        nav.classList.remove('active');
-                        const spans = menuToggle.querySelectorAll('span');
-                        spans[0].style.transform = 'none';
-                        spans[1].style.transform = 'none';
-                        document.body.style.overflow = '';
-                    }
-                }
-            }
-        });
-    });
-
     // ========== EFECTO DE HOVER EN TARJETAS ==========
     const cards = document.querySelectorAll('.value-item, .legal-card, .story-card');
 
@@ -367,10 +365,6 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.transform = '';
         });
     });
-
-    // ========== INICIALIZAR AÑO ACTUAL ==========
-    const currentYear = new Date().getFullYear();
-    document.getElementById('currentYear').textContent = currentYear;
 
     // ========== LÓGICA DE CARRITO DEMO PARA KIOSKO (en servicios.html) ==========
     const cart = [];
@@ -408,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Añadir listeners a los botones de eliminar
         document.querySelectorAll('.cart-item-remove').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const index = parseInt(this.dataset.index);
                 cart.splice(index, 1);
                 updateCartDisplay();
@@ -418,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Añadir items al carrito (para .kiosk-item-urban)
     document.querySelectorAll('.item-add-urban').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const itemDiv = this.closest('.kiosk-item-urban');
             const itemName = itemDiv.dataset.item || itemDiv.querySelector('.item-name-urban').textContent;
             const priceText = itemDiv.dataset.price || itemDiv.querySelector('.item-price-urban').textContent;
@@ -437,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Botón checkout demo
     if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function() {
+        checkoutBtn.addEventListener('click', function () {
             if (cart.length === 0) return;
             alert('¡Gracias por tu pedido demo! En un entorno real se procesaría el pago.');
             // Vaciar carrito
@@ -518,9 +512,4 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calcular inicial
         calculatePrice();
     }
-
-    console.log('%c🔥 KORA SOLUTIONS - Efectos 3D Activados 🔥',
-        'font-size: 18px; font-weight: bold; color: #3a5a78; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);');
-    console.log('%c✨ Experiencia visual mejorada con efectos 3D y animaciones avanzadas ✨',
-        'font-size: 14px; color: #ff6b6b;');
 });
