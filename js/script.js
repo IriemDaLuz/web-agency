@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ========== CARGA DE COMPONENTES REUTILIZABLES ==========
+    function loadComponent(id, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando componente:', error));
+    }
+
+    loadComponent("header-placeholder", "tpl/header.html");
+    loadComponent("footer-placeholder", "tpl/footer.html");
+
     // ========== SISTEMA DE PARTÍCULAS FLOTANTES ==========
     function createParticles() {
         const particlesContainer = document.createElement('div');
