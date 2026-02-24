@@ -879,7 +879,7 @@
 
 /* CALCULADORA PREMIUM */
 .calculator {
-    padding: 6rem 2rem;
+    padding: 5rem 2rem;
     background-color: var(--bg-secondary);
 }
 
@@ -906,7 +906,7 @@
 
 .calculator-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .calculator-title {
@@ -930,20 +930,22 @@
     box-shadow: 0 30px 40px -20px rgba(0,0,0,0.8);
 }
 
-.n-proyectos {
-    min-height: 50vh;
-}
-
 .form-group {
     margin-bottom: 20px;
 }
 
-.form-group label {
+.form-group-title {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.checkbox-group label {
+    display: block;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
@@ -971,8 +973,11 @@
 
 .checkbox-group {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: flex-start;
     gap: 1rem;
+    max-height: 200px;
+    overflow: auto;
 }
 
 .checkbox-label {
@@ -984,6 +989,7 @@
 
 .checkbox-label input[type="checkbox"] {
     margin: 0;
+    margin-right: 5px;
     width: 18px;
     height: 18px;
     flex: 0 0 auto;
@@ -993,7 +999,7 @@
 
 .calculator-result {
     background-color: var(--bg-primary);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 20px;
     text-align: center;
     margin-bottom: 2rem;
@@ -1421,9 +1427,6 @@
         display: none;
     }
 
-    .calculator-form {
-        padding: 2rem;
-    }
 
     .result-value {
         font-size: 2.2rem;
@@ -1443,10 +1446,6 @@
 @media (max-width: 576px) {
     .calculator-title {
         font-size: 2rem;
-    }
-
-    .checkbox-group {
-        grid-template-columns: 1fr;
     }
     
     .hero-title {

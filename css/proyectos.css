@@ -1,6 +1,10 @@
 /* ======================================================
    ESTILOS PARA proyectos.html
    ====================================================== */
+.n-proyectos {
+    min-height: 50vh;
+}
+
 .logos {
     padding: 4rem 2rem 6rem 2rem;
     background-color: var(--bg-primary);
