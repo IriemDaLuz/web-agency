@@ -34,7 +34,6 @@
 
 .legal-document h2 {
    font-size: 1.6rem;
-   margin-top: 2.5rem;
    margin-bottom: 1rem;
    color: var(--text-primary);
    font-weight: 500;
@@ -42,7 +41,7 @@
 
 .legal-document h3 {
    font-size: 1.2rem;
-   margin-top: 1.8rem;
+   margin-top: 0.8rem;
    margin-bottom: 0.8rem;
    color: var(--text-primary);
    font-weight: 500;
@@ -79,7 +78,7 @@
    background-color: var(--bg-secondary);
    padding: 1.5rem;
    border-radius: var(--border-radius);
-   margin-bottom: 2rem;
+   margin-bottom: 4rem;
    border: 1px solid var(--border-color);
 }
 
@@ -102,5 +101,84 @@
 .contenido {
    display: flex;
    flex-direction: column;
-   gap: 60px;
+   gap: 90px;
+}
+
+/* ======================================================
+   RESPONSIVE - legal.html
+   ====================================================== */
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+   .legal-page {
+      padding-bottom: 40px;
+   }
+
+   .legal-page .container {
+      padding: 0 15px;
+   }
+
+   .legal-document {
+      padding: 1.75rem;
+   }
+
+   .legal-document h1 {
+      font-size: 2rem;
+   }
+
+   .legal-document h2 {
+      font-size: 1.4rem;
+   }
+
+   .legal-document h3 {
+      font-size: 1.1rem;
+   }
+
+   .contenido {
+      gap: 40px;
+   }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+   .legal-page .container {
+      padding: 0 14px;
+   }
+
+   .legal-document {
+      padding: 1.25rem;
+      border-radius: 10px;
+   }
+
+   .legal-document ul,
+   .legal-document ol {
+      padding-left: 1.1rem;
+   }
+
+   .legal-document p,
+   .legal-document li {
+      font-size: 0.98rem;
+      line-height: 1.65;
+   }
+
+   .legal-document a,
+   .legal-document p,
+   .legal-document li {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+   }
+}
+
+@media (max-width: 360px) {
+   .legal-page .container {
+      padding: 0 10px;
+   }
+
+   .legal-document {
+      padding: 1rem;
+   }
+
+   .legal-document h1 {
+      font-size: 1.75rem;
+   }
 }

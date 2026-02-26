@@ -487,8 +487,9 @@
 }
 
 .legal-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
     perspective: 1000px;
 }
@@ -510,6 +511,8 @@
     gap: 15px;
     text-decoration: none;
     color: inherit;
+    flex: 1 1 300px;
+    max-width: 360px;
 }
 
 .legal-card:hover {
@@ -524,7 +527,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     transition: transform 0.5s ease;
     font-weight: 500;
 }
@@ -846,8 +849,18 @@
         grid-column: 1 / -1;
     }
 
-    .legal-content {
-        grid-template-columns: repeat(2, 1fr);
+    .legal-card {
+        flex: 0 0 calc(50% - 25px);
+        max-width: calc(50% - 25px);
+    }
+
+    .legal-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .legal-card {
+        flex: 0 0 calc(50% - 25px);
+        max-width: calc(50% - 25px);
     }
 }
 
@@ -953,9 +966,19 @@
         font-size: 2.2rem;
     }
 
-    .services-grid,
-    .legal-content {
+    .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .legal-content {
+        gap: 14px;
+    }
+
+    .legal-card {
+        flex: 0 0 100%;
+        max-width: 500px;
+        padding: 10px 20px;
+        justify-content: space-between;
     }
 
     .values {
@@ -1039,6 +1062,18 @@
     .value-item p {
         grid-area: text;
         margin-top: 8px;
+    }
+
+    .legal-card h3 {
+        font-size: 1rem;
+    }
+
+    .legal-card h3 i {
+        font-size: 1.2rem;
+    }
+
+    .legal-link {
+        font-size: 1rem;
     }
 }
 
