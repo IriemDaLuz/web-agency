@@ -248,11 +248,6 @@
     animation: linePulse 2s infinite alternate;
 }
 
-@keyframes linePulse {
-    0% { width: 60px; opacity: 0.5; }
-    100% { width: 100px; opacity: 1; }
-}
-
 .section-subtitle {
     max-width: 600px;
     margin: 0 auto;
