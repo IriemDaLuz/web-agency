@@ -6,7 +6,6 @@ export async function onRequestPost({ request, env }) {
     }
 
     // 2) Origin check (capa extra)
-    // OJO: no es “infalible”, pero bloquea mucha automatización básica.
     if (env.ALLOWED_ORIGIN) {
         const origin = request.headers.get("Origin") || "";
         if (origin && origin !== env.ALLOWED_ORIGIN) {
@@ -21,34 +20,12 @@ export async function onRequestPost({ request, env }) {
         return json({ ok: false, error: "Bad JSON" }, 400);
     }
 
-    // 3) Honeypot: respuesta neutra (no dar pistas)
+    // 3) Honeypot: respuesta neutra
     if (body.website && String(body.website).trim() !== "") {
         return json({ ok: true }, 200);
     }
 
-    // 4) Turnstile (si existe secret, lo exigimos)
-    if (env.TURNSTILE_SECRET) {
-        const token = String(body.turnstileToken || "");
-        if (!token) return json({ ok: false, error: "Captcha required" }, 403);
-
-        const ip = request.headers.get("CF-Connecting-IP") || "";
-        const formData = new FormData();
-        formData.append("secret", env.TURNSTILE_SECRET);
-        formData.append("response", token);
-        if (ip) formData.append("remoteip", ip);
-
-        const tsResp = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-            method: "POST",
-            body: formData,
-        });
-
-        const ts = await tsResp.json().catch(() => null);
-        if (!ts || !ts.success) {
-            return json({ ok: false, error: "Captcha failed" }, 403);
-        }
-    }
-
-    // 5) Validación / saneado (anti abuso + anti payload gigante)
+    // 4) Validación / saneado
     const name = clean(body.name, 80);
     const email = clean(body.email, 120);
     const subject = clean(body.subject || "Nuevo mensaje desde la web", 120);
@@ -58,12 +35,12 @@ export async function onRequestPost({ request, env }) {
         return json({ ok: false, error: "Missing fields" }, 400);
     }
 
-    // Validación simple email (suficiente para formulario)
+    // Validación simple email
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
         return json({ ok: false, error: "Invalid email" }, 400);
     }
 
-    // 6) Enviar con EmailJS REST (Private Key SOLO server-side)
+    // 5) Enviar con EmailJS REST
     const payload = {
         service_id: env.EMAILJS_SERVICE_ID,
         template_id: env.EMAILJS_TEMPLATE_ID,

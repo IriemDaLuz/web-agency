@@ -22,19 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
         statusBox.textContent = "";
 
         try {
-            // Obtener token de Turnstile
-            const turnstileToken =
-                window.turnstile && window.turnstile.getResponse
-                    ? window.turnstile.getResponse()
-                    : "";
-
             const payload = {
                 name: form.name.value,
                 email: form.email.value,
                 subject: form.subject.value || "Nuevo mensaje desde la web",
                 message: form.message.value,
                 website: form.website.value,
-                turnstileToken,
             };
 
             const res = await fetch("/api/contact", {
@@ -56,10 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             form.reset();
 
-            // Reset Turnstile para próximos envíos
-            if (window.turnstile && window.turnstile.reset) {
-                window.turnstile.reset();
-            }
         } catch (error) {
             console.error(error);
 
@@ -68,10 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Hubo un error al enviar el mensaje. Inténtalo de nuevo.";
             statusBox.classList.add("show", "error");
 
-            // Reset Turnstile también en error
-            if (window.turnstile && window.turnstile.reset) {
-                window.turnstile.reset();
-            }
         } finally {
             if (btn) {
                 btn.disabled = false;
