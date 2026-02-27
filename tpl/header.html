@@ -10,13 +10,13 @@
         <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="index.html#inicio" class="nav-link" data-text="Inicio">Inicio</a>
+                    <a href="index.html#inicio" class="nav-link" data-i18n="nav.home" data-text="Inicio">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html#sobre-nosotros" class="nav-link" data-text="Sobre Nosotros">Sobre Nosotros</a>
+                    <a href="index.html#sobre-nosotros" class="nav-link" data-i18n="nav.about" data-text="Sobre Nosotros">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html#servicios" class="nav-link" data-text="Servicios">Servicios</a>
+                    <a href="index.html#servicios" class="nav-link" data-i18n="nav.services" data-text="Servicios">Servicios</a>
                     <!-- <ul class="dropdown-menu">
                         <li><a href="servicios.html#diseno" class="dropdown-link">Diseño de Identidad</a></li>
                         <li><a href="servicios.html#desarrollo" class="dropdown-link">Desarrollo Web</a></li>
@@ -25,16 +25,23 @@
                     </ul> -->
                 </li>
                 <li class="nav-item">
-                    <a href="proyectos.html" class="nav-link" data-text="Proyectos">Proyectos</a>
+                    <a href="proyectos.html" class="nav-link" data-i18n="nav.projects" data-text="Proyectos">Proyectos</a>
                 </li>
-                <li class="nav-item">
-                    <a href="index.html#contacto" class="nav-link" data-text="Contacto">Contacto</a>
+                <li class="lang-switch-li">
+                    <div class="lang-switch lang-switch-nav">
+                        <button type="button" class="lang-btn" data-lang="es">ES</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    </div>
                 </li>
             </ul>
         </nav>
 
         <div class="header-actions">
-            <a href="index.html#contacto" class="btn btn-contact">Contacta</a>
+            <a href="index.html#contacto" class="btn btn-contact" data-i18n="nav.cta" data-text="Contacta">Contacta</a>
+            <div class="lang-switch lang-switch-desktop">
+                <button type="button" class="lang-btn" data-lang="es">ES</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
             <button class="menu-toggle" aria-label="Menú">
                 <span></span>
                 <span></span>

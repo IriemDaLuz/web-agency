@@ -9,36 +9,57 @@
                     <img class="kora-logo" src="assets/logo/kora.svg" alt="KORA">
                     <span class="logo-dot"></span>
                 </a>
-                <p class="footer-description">
+                <p class="footer-description" data-i18n="footer.description">
                     Creamos productos digitales únicos que definen el punto distintivo de cada negocio.
                 </p>
+
+                <div class="lang-switch">
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                </div>
             </div>
 
             <div class="footer-links">
-                <h3 class="footer-title-2">NAVEGACIÓN</h3>
+                <h3 class="footer-title-2" data-i18n="footer.navigation">
+                    NAVEGACIÓN
+                </h3>
                 <ul>
-                    <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
-                    <li><a href="index.html#servicios">Servicios</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
-                    <li><a href="index.html#legal">Legal</a></li>
+                    <li><a href="index.html#inicio" data-i18n="nav.home" data-text="Inicio">Inicio</a></li>
+                    <li><a href="index.html#sobre-nosotros" data-i18n="nav.about" data-text="Sobre Nosotros">Sobre
+                            Nosotros</a></li>
+                    <li><a href="index.html#servicios" data-i18n="nav.services" data-text="Servicios">Servicios</a></li>
+                    <li><a href="proyectos.html" data-i18n="nav.projects" data-text="Proyectos">Proyectos</a></li>
+                    <li><a href="index.html#contacto" data-i18n="footer.contact" data-text="Contacto">Contacto</a></li>
+                    <li><a href="index.html#legal" data-i18n="footer.legalLink" data-text="Legal">Legal</a></li>
                 </ul>
             </div>
 
             <div class="footer-cta">
-                <h3 class="footer-title">¿LISTO PARA COMENZAR?</h3>
-                <p>Tu proyecto digital único está a un mensaje de distancia.</p>
-                <a href="index.html#contacto" class="btn btn-secondary">Solicitar consulta</a>
+                <h3 class="footer-title" data-i18n="footer.ready">¿LISTO PARA COMENZAR?</h3>
+                <p data-i18n="footer.ctaText">Tu proyecto digital único está a un mensaje de distancia.</p>
+                <a href="index.html#contacto" class="btn btn-secondary" data-i18n="footer.ctaButton">
+                    Solicitar consulta
+                </a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <span id="currentYear"></span> KORA Solutions. Todos los derechos reservados.</p>
+            <p>
+                &copy; <span id="currentYear"></span>
+                <span data-i18n="footer.rights">
+                    KORA Solutions. Todos los derechos reservados.
+                </span>
+            </p>
             <div class="footer-legal">
-                <a href="legal.html#aviso-legal">Aviso legal</a>
-                <a href="legal.html#privacidad">Política de privacidad</a>
-                <a href="legal.html#cookies">Política de cookies</a>
+                <a href="legal.html#aviso-legal" data-i18n="footer.legalNotice" data-text="Aviso legal">
+                    Aviso legal
+                </a>
+                <a href="legal.html#privacidad" data-i18n="footer.privacy" data-text="Política de privacidad">
+                    Política de privacidad
+                </a>
+                <a href="legal.html#cookies" data-i18n="footer.cookies" data-text="Política de cookies">
+                    Política de cookies
+                </a>
             </div>
         </div>
     </div>
