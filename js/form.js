@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("form.js cargado");
     const form = document.getElementById("contact-form");
     const statusBox = document.getElementById("form-status");
 
