@@ -4,22 +4,23 @@
 <head>
     <!-- Google Tag Manager -->
     <script>
-        (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-T8RSJ7GH');
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T8RSJ7GH');
     </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KORA | Proyectos</title>
-    <meta name="description" content="Descubre los proyectos desarrollados por KORA Digital Solutions: estrategia, diseño y tecnología aplicada a negocios reales.">
+    <meta name="description"
+        content="Descubre los proyectos desarrollados por KORA Digital Solutions.">
     <!-- CANONICAL -->
     <link rel="canonical" href="https://koradigitalsolutions.com/proyectos.html">
     <!-- FAVICONS -->
@@ -38,12 +39,14 @@
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="KORA | Proyectos">
-    <meta name="twitter:description" content="Explora los proyectos digitales desarrollados por KORA Digital Solutions.">
+    <meta name="twitter:description"
+        content="Explora los proyectos digitales desarrollados por KORA Digital Solutions.">
     <meta name="twitter:image" content="https://koradigitalsolutions.com/assets/seo/og-kora-1200x630.jpg">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS -->
@@ -55,10 +58,10 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8RSJ7GH"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8RSJ7GH" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-     
+
     <!-- ===================================================== -->
     <!--  TEMPLATE HEADER (tpl/header.html)  -->
     <!-- ===================================================== -->
@@ -67,17 +70,26 @@
     <main>
         <section class="page-hero" style="padding: 8rem 2rem 4rem; text-align: center;">
             <div class="container n-proyectos">
-                <h1 class="page-title" style="font-size: 3.5rem; margin-bottom: 1rem;">Nuestros <span
-                        class="highlight">Proyectos</span></h1>
+                <h1 class="page-title" style="font-size: 3.5rem; margin-bottom: 1rem;">
+                    <span data-i18n="projects.hero.titlePrefix" data-text="Nuestros">Nuestros</span>
+                    <span class="highlight" data-i18n="projects.hero.titleHighlight"
+                        data-text="Proyectos">Proyectos</span>
+                </h1>
+
                 <p class="page-subtitle"
-                    style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Esta
-                    sección se encuentra en desarrollo.</p>
+                    style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;"
+                    data-i18n="projects.hero.subtitle" data-text="Esta sección se encuentra en desarrollo.">
+                    Esta sección se encuentra en desarrollo.
+                </p>
             </div>
         </section>
+
         <!--
-        <section class="logos">
-            <div class="logos-container">
-                <p class="logos-label">CLIENTES Y COLABORADORES</p>
+    <section class="logos">
+        <div class="logos-container">
+            <p class="logos-label" data-i18n="projects.logos.label" data-text="CLIENTES Y COLABORADORES">
+                CLIENTES Y COLABORADORES
+            </p>
 
                 <div class="logos-grid">
                     <a href="#" target="_blank" class="logo-card stripe">
@@ -114,17 +126,22 @@
         <section class="projects">
             <div class="container">
                 <h2 class="section-title">
-                    Proyectos <span class="highlight">Destacados</span>
+                    <span data-i18n="projects.featured.titlePrefix" data-text="Proyectos">Proyectos</span>
+                    <span class="highlight" data-i18n="projects.featured.titleHighlight" data-text="Destacados">Destacados</span>
                 </h2>
+
                 <div class="projects-showcase">
                     <div class="project-item">
                         <div class="project-header spotify-gradient">
                             <i class="fab fa-spotify"></i>
                         </div>
                         <div class="project-body">
-                            <h3>Spotify Clone</h3>
-                            <p>Desarrollo de una aplicación web similar a Spotify con funcionalidades de reproducción y listas personalizadas.</p>
-                            <span class="project-link">Ver proyecto →</span>
+                            <h3 data-i18n="projects.items.spotify.title" data-text="Spotify Clone">Spotify Clone</h3>
+                            <p data-i18n="projects.items.spotify.desc"
+                            data-text="Desarrollo de una aplicación web similar a Spotify con funcionalidades de reproducción y listas personalizadas.">
+                                Desarrollo de una aplicación web similar a Spotify con funcionalidades de reproducción y listas personalizadas.
+                            </p>
+                            <span class="project-link" data-i18n="projects.items.link" data-text="Ver proyecto →">Ver proyecto →</span>
                         </div>
                     </div>
 
@@ -133,9 +150,12 @@
                             <i class="fab fa-airbnb"></i>
                         </div>
                         <div class="project-body">
-                            <h3>Plataforma de Reservas</h3>
-                            <p>Desarrollo de un sistema de reservas para alojamientos turísticos con pasarela de pago integrada.</p>
-                            <span class="project-link">Ver proyecto →</span>
+                            <h3 data-i18n="projects.items.booking.title" data-text="Plataforma de Reservas">Plataforma de Reservas</h3>
+                            <p data-i18n="projects.items.booking.desc"
+                            data-text="Desarrollo de un sistema de reservas para alojamientos turísticos con pasarela de pago integrada.">
+                                Desarrollo de un sistema de reservas para alojamientos turísticos con pasarela de pago integrada.
+                            </p>
+                            <span class="project-link" data-i18n="projects.items.link" data-text="Ver proyecto →">Ver proyecto →</span>
                         </div>
                     </div>
 
@@ -144,9 +164,12 @@
                             <i class="fab fa-linkedin"></i>
                         </div>
                         <div class="project-body">
-                            <h3>Red Social Corporativa</h3>
-                            <p>Desarrollo de una red social interna para una empresa, con perfiles, mensajería y paneles de administración.</p>
-                            <span class="project-link">Ver proyecto →</span>
+                            <h3 data-i18n="projects.items.social.title" data-text="Red Social Corporativa">Red Social Corporativa</h3>
+                            <p data-i18n="projects.items.social.desc"
+                            data-text="Desarrollo de una red social interna para una empresa, con perfiles, mensajería y paneles de administración.">
+                                Desarrollo de una red social interna para una empresa, con perfiles, mensajería y paneles de administración.
+                            </p>
+                            <span class="project-link" data-i18n="projects.items.link" data-text="Ver proyecto →">Ver proyecto →</span>
                         </div>
                     </div>
                 </div>
@@ -155,9 +178,14 @@
 
         <section class="cta">
             <div class="container">
-                <h2>¿Quieres ser el próximo?</h2>
-                <p>Cuéntanos tu idea y hagamos realidad tu proyecto.</p>
-                <a href="index.html#contacto" class="btn btn-primary">Contacta con nosotros</a>
+                <h2 data-i18n="projects.cta.title" data-text="¿Quieres ser el próximo?">¿Quieres ser el próximo?</h2>
+                <p data-i18n="projects.cta.subtitle" data-text="Cuéntanos tu idea y hagamos realidad tu proyecto.">
+                    Cuéntanos tu idea y hagamos realidad tu proyecto.
+                </p>
+                <a href="index.html#contacto" class="btn btn-primary"
+                data-i18n="projects.cta.button" data-text="Contacta con nosotros">
+                    Contacta con nosotros
+                </a>
             </div>
         </section>
     -->

@@ -19,5 +19,138 @@
     "legalNotice": "Legal notice",
     "privacy": "Privacy policy",
     "cookies": "Cookie policy"
+  },
+
+  "services": {
+    "hero": {
+      "titlePrefix": "Our",
+      "titleHighlight": "Services",
+      "subtitle": "Explore in detail each of the solutions we offer to boost your business."
+    },
+
+    "ctaInfo": "Request information",
+
+    "identity": {
+      "titlePrefix": "Brand",
+      "titleHighlight": "Identity Design",
+      "intro": "We create unique visual identities that communicate your brand values and make it unforgettable. We don't just design a logo, we build a complete visual ecosystem.",
+      "visual": "Build a brand that lasts.",
+      "list": {
+        "1": "Strategic branding and naming",
+        "2": "Logo design and variations",
+        "3": "Visual style guides and brand manual",
+        "4": "Stationery and merchandising design"
+      }
+    },
+
+    "web": {
+      "titlePrefix": "Web",
+      "titleHighlight": "Development",
+      "intro": "We develop custom websites using modern, scalable technologies. From landing pages to complex e-commerce platforms.",
+      "visual": "Modern technology for scalable results.",
+      "list": {
+        "1": "Corporate websites and portfolios",
+        "2": "Online stores (E-commerce)",
+        "3": "Progressive Web Applications (PWA)",
+        "4": "Maintenance and technical support"
+      }
+    },
+
+    "ai": {
+      "titlePrefix": "AI",
+      "titleHighlight": "Automations",
+      "intro": "We automate repetitive tasks to save working hours and reduce errors. We implement artificial intelligence to optimize your business processes.",
+      "visual": "Let AI handle the heavy lifting.",
+      "list": {
+        "1": "AI-powered customer service bots",
+        "2": "Email and marketing automation",
+        "3": "Intelligent document classification",
+        "4": "Predictive data analysis"
+      }
+    },
+
+    "finalCta": {
+      "title": "Ready to start your project?",
+      "subtitle": "Let's talk and discover how we can help you achieve your goals.",
+      "button": "Contact us"
+    }
+  },
+
+  "projects": {
+    "hero": {
+      "titlePrefix": "Our",
+      "titleHighlight": "Projects",
+      "subtitle": "This section is currently under development."
+    },
+
+    "logos": {
+      "label": "CLIENTS & PARTNERS"
+    },
+
+    "featured": {
+      "titlePrefix": "Featured",
+      "titleHighlight": "Projects"
+    },
+
+    "items": {
+      "link": "View project →",
+
+      "spotify": {
+        "title": "Spotify Clone",
+        "desc": "Development of a Spotify-like web app with playback features and personalized playlists."
+      },
+
+      "booking": {
+        "title": "Booking Platform",
+        "desc": "Development of a booking system for tourist accommodations with an integrated payment gateway."
+      },
+
+      "social": {
+        "title": "Corporate Social Network",
+        "desc": "Development of an internal social network for a company, with profiles, messaging, and admin dashboards."
+      }
+    },
+
+    "cta": {
+      "title": "Want to be the next one?",
+      "subtitle": "Tell us your idea and let's bring your project to life.",
+      "button": "Contact us"
+    }
+  },
+
+  "about": {
+    "history": {
+      "title": "Our Story",
+      "subtitle": "Where it all began.",
+      "heading": "From a shared idea to a purpose-driven reality",
+      "text1": "KORA was founded in 2026 by three friends from the Canary Islands with a clear vision: to create an agency that not only executes, but thinks. Tired of generic solutions, we decided to build a space where strategy and digital craftsmanship come together.",
+      "text2": "Our purpose is simple. In an increasingly automated world, we want digital tools to help brands connect with people in an authentic way. We are not looking to build \"websites\", we aim to create platforms that tell stories, solve problems, and generate real growth. We want to be the technological partner that truly understands your business and drives it forward."
+    },
+
+    "team": {
+      "title": "The Team",
+      "subtitle": "Behind every project, there are people. Get to know us.",
+
+      "iriem": {
+        "role": "Strategy & Design",
+        "bio": "Passionate about creating digital experiences that not only look great but work flawlessly. His attention to detail and user-focused mindset ensure that every project tells a compelling and cohesive visual story."
+      },
+
+      "fernando": {
+        "role": "Development & Technology",
+        "bio": "With both an analytical and creative mindset, Fernando turns ideas into clean and efficient code. He ensures that technology not only works but impresses, always seeking the best technical solution for every challenge."
+      },
+
+      "fabio": {
+        "role": "Innovation & Growth",
+        "bio": "The team's strategist. Fabio ensures that every action aligns with business objectives. His ability to understand client needs and translate them into opportunities makes him the engine of growth."
+      }
+    },
+
+    "cta": {
+      "title": "Like what you see?",
+      "subtitle": "Let's talk about how we can help you achieve your goals.",
+      "button": "Contact us"
+    }
   }
 }

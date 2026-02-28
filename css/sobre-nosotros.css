@@ -42,7 +42,7 @@
 
 .history-grid {
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: 3fr 1fr;
    gap: 50px;
    align-items: center;
    margin-top: 20px;
@@ -69,26 +69,28 @@
 
 .history-visual {
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
+   gap: 40px;
 }
 
 .visual-placeholder {
    background: var(--bg-elevated);
    border-radius: 30px;
-   padding: 60px 40px;
+   padding: 20px 25px;
    border: 1px solid var(--border-color);
    box-shadow: var(--shadow-lg);
    display: flex;
    gap: 30px;
    flex-wrap: wrap;
    justify-content: center;
-   transform: rotate(2deg);
+   transform: rotate(5deg);
    transition: transform 0.3s ease;
 }
 
 .visual-placeholder:hover {
-   transform: rotate(0deg) scale(1.02);
+   transform: rotate(-5deg) scale(1.02);
 }
 
 .placeholder-emoji {
@@ -183,19 +185,21 @@
    margin-bottom: 30px;
 }
 
-/* Responsive (MEJORADO) */
+/* Responsive */
 @media (max-width: 992px) {
    .history-grid {
       grid-template-columns: 1fr;
       gap: 40px;
    }
-   
+
    .history-content {
-      padding-right: 0;
       order: 2;
+      padding: 0;
    }
-   
+
    .history-visual {
+      flex-direction: row;
+      gap: 90px;
       order: 1;
    }
 
@@ -205,6 +209,14 @@
 
    .page-title {
       font-size: 2.6rem;
+   }
+
+   .page-hero {
+      padding: 3rem 1rem 2rem;
+   }
+
+   .container {
+      padding: 0 30px;
    }
 }
 
@@ -216,26 +228,51 @@
       margin-right: auto;
    }
 
-   .history-heading {
-      font-size: 1.8rem;
+   .visual-placeholder {
+      padding: 15px 20px;
    }
 
-   .visual-placeholder {
-      padding: 40px 20px;
+   .history-visual {
+      flex-direction: row;
+      gap: 30px;
    }
 
    .placeholder-emoji {
       font-size: 3rem;
+   }
+
+   .history-heading {
+      font-size: 1.8rem;
+   }
+
+   .history-section {
+      padding: 40px 0 40px;
    }
 }
 
 /* Pequeños retoques para mantener consistencia */
 @media (max-width: 576px) {
    .page-hero {
-      padding: 6rem 1rem 2rem;
+      padding: 4rem 1rem 2rem;
    }
    
    .page-title {
       font-size: 2rem;
+   }
+
+   .visual-placeholder {
+      padding: 10px 15px;
+   }
+
+   .history-visual {
+      gap: 15px;
+   }
+
+   .placeholder-emoji {
+      font-size: 2.4rem;
+   }
+
+   .history-heading {
+      font-size: 1.5rem;
    }
 }
