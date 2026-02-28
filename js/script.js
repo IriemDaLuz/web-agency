@@ -149,7 +149,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     Promise.all([
         loadComponent("header-placeholder", "tpl/header.html"),
-        loadComponent("footer-placeholder", "tpl/footer.html")
+        loadComponent("footer-placeholder", "tpl/footer.html"),
+        loadComponent("cookies-placeholder", "tpl/cookies.html")
     ]).then(() => {
         initHeaderAndMenu();
         initCurrentYear();
@@ -174,6 +175,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener("i18n:changed", (e) => {
             paintLangActive(e.detail.lang);
         });
+
+        // cargar cookie-consent.js después de que exista #cookie-consent
+        const s = document.createElement("script");
+        s.src = "js/cookie-consent.js";
+        s.defer = true;
+        document.body.appendChild(s);
     });
 
     // ========== SISTEMA DE PARTÍCULAS FLOTANTES ==========
